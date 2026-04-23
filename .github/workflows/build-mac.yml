@@ -1,0 +1,43 @@
+name: Build macOS app
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build-macos:
+    runs-on: macos-latest
+
+    steps:
+      - name: Download repo
+        uses: actions/checkout@v4
+
+      - name: Install Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install packages
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Build app with PyInstaller
+        run: |
+          pyinstaller --noconfirm --windowed \
+            --name "Teacher Planner" \
+            --icon "planner_app/assets/favicon.ico" \
+            --add-data "planner_app/assets:planner_app/assets" \
+            --add-data "planner_app/fonts:planner_app/fonts" \
+            --add-data "planner_app/schools.json:planner_app" \
+            planner_app/main.py
+
+      - name: Zip the app
+        run: |
+          cd dist
+          ditto -c -k --sequesterRsrc --keepParent "Teacher Planner.app" "TeacherPlanner-mac.zip"
+
+      - name: Upload build
+        uses: actions/upload-artifact@v4
+        with:
+          name: TeacherPlanner-mac
+          path: dist/TeacherPlanner-mac.zip
