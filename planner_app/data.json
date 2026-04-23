@@ -1,0 +1,536 @@
+{
+  "todos": [],
+  "weekly_classes": {
+    "2026-04-20": {
+      "Monday_P1": {
+        "class_name": "9.3",
+        "topic": "",
+        "printed_resources": false,
+        "notes": "",
+        "homework": "",
+        "priority": "",
+        "assignment_name": "",
+        "assignment_due_date": ""
+      },
+      "Monday_P2": {
+        "class_name": "9.3",
+        "topic": "",
+        "printed_resources": false,
+        "notes": "",
+        "homework": "",
+        "priority": "",
+        "assignment_name": "",
+        "assignment_due_date": ""
+      },
+      "Monday_P3": {
+        "class_name": "7.11",
+        "topic": "",
+        "printed_resources": false,
+        "notes": "",
+        "homework": "",
+        "priority": "",
+        "assignment_name": "",
+        "assignment_due_date": ""
+      },
+      "Monday_P4": {
+        "class_name": "DOTT",
+        "topic": "",
+        "printed_resources": false,
+        "notes": "",
+        "homework": "",
+        "priority": "",
+        "assignment_name": "",
+        "assignment_due_date": ""
+      },
+      "Monday_P5": {
+        "class_name": "ATAR ECONS",
+        "topic": "",
+        "printed_resources": false,
+        "notes": "",
+        "homework": "",
+        "priority": "",
+        "assignment_name": "",
+        "assignment_due_date": ""
+      },
+      "Tuesday_P1": {
+        "class_name": "7.11",
+        "topic": "",
+        "printed_resources": false,
+        "notes": "",
+        "homework": "",
+        "priority": "",
+        "assignment_name": "",
+        "assignment_due_date": ""
+      },
+      "Tuesday_P2": {
+        "class_name": "DOTT",
+        "topic": "",
+        "printed_resources": false,
+        "notes": "",
+        "homework": "",
+        "priority": "",
+        "assignment_name": "",
+        "assignment_due_date": "",
+        "dott_type": ""
+      },
+      "Tuesday_P3": {
+        "class_name": "9.3",
+        "topic": "",
+        "printed_resources": false,
+        "notes": "",
+        "homework": "",
+        "priority": "",
+        "assignment_name": "",
+        "assignment_due_date": ""
+      },
+      "Tuesday_P4": {
+        "class_name": "9.1",
+        "topic": "",
+        "printed_resources": false,
+        "notes": "",
+        "homework": "",
+        "priority": "",
+        "assignment_name": "",
+        "assignment_due_date": ""
+      },
+      "Tuesday_P5": {
+        "class_name": "DOTT",
+        "topic": "",
+        "printed_resources": false,
+        "notes": "",
+        "homework": "",
+        "priority": "",
+        "assignment_name": "",
+        "assignment_due_date": ""
+      },
+      "Wednesday_P1": {
+        "class_name": "ATAR ECONS",
+        "topic": "",
+        "printed_resources": false,
+        "notes": "",
+        "homework": "",
+        "priority": "",
+        "assignment_name": "",
+        "assignment_due_date": ""
+      },
+      "Wednesday_P2": {
+        "class_name": "DOTT",
+        "topic": "",
+        "printed_resources": false,
+        "notes": "",
+        "homework": "",
+        "priority": "",
+        "assignment_name": "",
+        "assignment_due_date": "",
+        "dott_type": ""
+      },
+      "Wednesday_P3": {
+        "class_name": "9.1",
+        "topic": "",
+        "printed_resources": false,
+        "notes": "",
+        "homework": "",
+        "priority": "",
+        "assignment_name": "",
+        "assignment_due_date": ""
+      },
+      "Wednesday_P4": {
+        "class_name": "7.11",
+        "topic": "",
+        "printed_resources": false,
+        "notes": "",
+        "homework": "",
+        "priority": "",
+        "assignment_name": "",
+        "assignment_due_date": ""
+      },
+      "Wednesday_P5": {
+        "class_name": "DOTT",
+        "topic": "",
+        "printed_resources": false,
+        "notes": "",
+        "homework": "",
+        "priority": "",
+        "assignment_name": "",
+        "assignment_due_date": ""
+      },
+      "Thursday_P1": {
+        "class_name": "DOTT",
+        "topic": "",
+        "printed_resources": false,
+        "notes": "",
+        "homework": "",
+        "priority": "",
+        "assignment_name": "",
+        "assignment_due_date": "",
+        "dott_type": ""
+      },
+      "Thursday_P2": {
+        "class_name": "ATAR ECONS",
+        "topic": "",
+        "printed_resources": false,
+        "notes": "",
+        "homework": "",
+        "priority": "",
+        "assignment_name": "",
+        "assignment_due_date": ""
+      },
+      "Thursday_P3": {
+        "class_name": "9.3",
+        "topic": "",
+        "printed_resources": false,
+        "notes": "",
+        "homework": "",
+        "priority": "",
+        "assignment_name": "",
+        "assignment_due_date": ""
+      },
+      "Thursday_P4": {
+        "class_name": "DOTT",
+        "topic": "",
+        "printed_resources": false,
+        "notes": "",
+        "homework": "",
+        "priority": "",
+        "assignment_name": "",
+        "assignment_due_date": ""
+      },
+      "Thursday_P5": {
+        "class_name": "7.11",
+        "topic": "",
+        "printed_resources": false,
+        "notes": "",
+        "homework": "",
+        "priority": "",
+        "assignment_name": "",
+        "assignment_due_date": ""
+      },
+      "Friday_P1": {
+        "class_name": "ATAR ECONS",
+        "topic": "",
+        "printed_resources": false,
+        "notes": "",
+        "homework": "",
+        "priority": "",
+        "assignment_name": "",
+        "assignment_due_date": ""
+      },
+      "Friday_P2": {
+        "class_name": "DOTT",
+        "topic": "",
+        "printed_resources": false,
+        "notes": "",
+        "homework": "",
+        "priority": "",
+        "assignment_name": "",
+        "assignment_due_date": ""
+      },
+      "Friday_P3": {
+        "class_name": "DOTT",
+        "topic": "",
+        "printed_resources": false,
+        "notes": "",
+        "homework": "",
+        "priority": "",
+        "assignment_name": "",
+        "assignment_due_date": ""
+      },
+      "Friday_P4": {
+        "class_name": "9.3",
+        "topic": "",
+        "printed_resources": false,
+        "notes": "",
+        "homework": "",
+        "priority": "",
+        "assignment_name": "",
+        "assignment_due_date": ""
+      },
+      "Friday_P5": {
+        "class_name": "9.1",
+        "topic": "",
+        "printed_resources": false,
+        "notes": "",
+        "homework": "",
+        "priority": "",
+        "assignment_name": "",
+        "assignment_due_date": ""
+      }
+    }
+  },
+  "pd_days": [],
+  "assignments": [],
+  "topic_overview": {},
+  "timetable": {
+    "Monday": [
+      {
+        "period": 1,
+        "label": "9.3",
+        "type": "class",
+        "students": 0
+      },
+      {
+        "period": 2,
+        "label": "9.3",
+        "type": "class",
+        "students": 0
+      },
+      {
+        "period": 3,
+        "label": "7.11",
+        "type": "class",
+        "students": 0
+      },
+      {
+        "period": 4,
+        "label": "DOTT",
+        "type": "label",
+        "students": 0
+      },
+      {
+        "period": 5,
+        "label": "ATAR ECONS",
+        "type": "class",
+        "students": 0
+      }
+    ],
+    "Tuesday": [
+      {
+        "period": 1,
+        "label": "7.11",
+        "type": "class",
+        "students": 0
+      },
+      {
+        "period": 2,
+        "label": "DOTT",
+        "type": "label",
+        "students": 0
+      },
+      {
+        "period": 3,
+        "label": "9.3",
+        "type": "class",
+        "students": 0
+      },
+      {
+        "period": 4,
+        "label": "9.1",
+        "type": "class",
+        "students": 0
+      },
+      {
+        "period": 5,
+        "label": "DOTT",
+        "type": "label",
+        "students": 0
+      }
+    ],
+    "Wednesday": [
+      {
+        "period": 1,
+        "label": "ATAR ECONS",
+        "type": "class",
+        "students": 0
+      },
+      {
+        "period": 2,
+        "label": "DOTT",
+        "type": "label",
+        "students": 0
+      },
+      {
+        "period": 3,
+        "label": "9.1",
+        "type": "class",
+        "students": 0
+      },
+      {
+        "period": 4,
+        "label": "7.11",
+        "type": "class",
+        "students": 0
+      },
+      {
+        "period": 5,
+        "label": "DOTT",
+        "type": "label",
+        "students": 0
+      }
+    ],
+    "Thursday": [
+      {
+        "period": 1,
+        "label": "DOTT",
+        "type": "label",
+        "students": 0
+      },
+      {
+        "period": 2,
+        "label": "ATAR ECONS",
+        "type": "class",
+        "students": 0
+      },
+      {
+        "period": 3,
+        "label": "9.3",
+        "type": "class",
+        "students": 0
+      },
+      {
+        "period": 4,
+        "label": "DOTT",
+        "type": "label",
+        "students": 0
+      },
+      {
+        "period": 5,
+        "label": "7.11",
+        "type": "class",
+        "students": 0
+      }
+    ],
+    "Friday": [
+      {
+        "period": 1,
+        "label": "ATAR ECONS",
+        "type": "class",
+        "students": 0
+      },
+      {
+        "period": 2,
+        "label": "DOTT",
+        "type": "label",
+        "students": 0
+      },
+      {
+        "period": 3,
+        "label": "DOTT",
+        "type": "label",
+        "students": 0
+      },
+      {
+        "period": 4,
+        "label": "9.3",
+        "type": "class",
+        "students": 0
+      },
+      {
+        "period": 5,
+        "label": "9.1",
+        "type": "class",
+        "students": 0
+      }
+    ]
+  },
+  "settings": {
+    "current_theme": "Apricot",
+    "font_family": "Segoe UI",
+    "window_width_ratio": 0.92,
+    "window_height_ratio": 0.9,
+    "class_colours": {
+      "7.11": "#f9e2ae",
+      "9.1": "#f4b6c2",
+      "9.3": "#f7c8a2",
+      "ATAR ECONS": "#d7e8ba",
+      "DOTT": "#bfe3c0"
+    },
+    "label_colours": {},
+    "font_sections": {
+      "term_title": "Arial",
+      "day_headers": "Calibri",
+      "class_cards": "Arial",
+      "todo_title": "Arial",
+      "todo_items": "Arial",
+      "reminder_cards": "Arial",
+      "popup_text": "Arial"
+    },
+    "custom_theme": {
+      "bg": "#000000",
+      "panel": "#ffffff",
+      "accent": "#ef8db4",
+      "text": "#2d2528",
+      "outline": "#ff80c0",
+      "Monday Border": "#f3a4a7",
+      "Tuesday Border": "#f2cf9b",
+      "Wednesday Border": "#d9a3f2",
+      "Thursday Border": "#a8e0a0",
+      "Friday Border": "#9be4ef",
+      "todo_bg": "#f4f400",
+      "reminder_bg": "#f3cfab",
+      "pd_day_bg": "#E6CBA8",
+      "public_holiday_bg": "#D9C2E9",
+      "school_holiday_bg": "#BFDCC3"
+    },
+    "terms": {},
+    "pd_day_bg": "#E6CBA8",
+    "public_holiday_bg": "#D9C2E9",
+    "school_holiday_bg": "#BFDCC3"
+  },
+  "app_state": {
+    "last_topic_prompt_date": "",
+    "last_monday_prompt_date": "",
+    "last_seen_date": "2026-04-21"
+  },
+  "setup": {
+    "completed": true,
+    "skipped": false,
+    "selected_year": "2026"
+  },
+  "auth": {
+    "users": [
+      {
+        "id": "user_e98140f08bb86625",
+        "username": "dom",
+        "email": "domtough222@gmail.com",
+        "password_hash": "094b79f83e5e47d97fd367a12b287195$b7fbf74c95291709e005779abb431b5b356de00ea86e2ee7a1de9a9ac321d832",
+        "created_at": "32f47f16"
+      }
+    ],
+    "current_user_id": "user_e98140f08bb86625",
+    "auto_login": true,
+    "current_user": {
+      "id": "28060c791583db173d14832e0b9b560b",
+      "username": "dom",
+      "email": "domtough222@gmail.com"
+    },
+    "last_user_id": "28060c791583db173d14832e0b9b560b"
+  },
+  "master_classes": [
+    {
+      "id": "setup_class_3",
+      "name": "7.11",
+      "type": "class",
+      "students": 0,
+      "colour": "#f9e2ae"
+    },
+    {
+      "id": "setup_class_1",
+      "name": "9.1",
+      "type": "class",
+      "students": 0,
+      "colour": "#f4b6c2"
+    },
+    {
+      "id": "setup_class_2",
+      "name": "9.3",
+      "type": "class",
+      "students": 0,
+      "colour": "#f7c8a2"
+    },
+    {
+      "id": "setup_class_4",
+      "name": "ATAR ECONS",
+      "type": "class",
+      "students": 0,
+      "colour": "#d7e8ba"
+    },
+    {
+      "id": "setup_class_5",
+      "name": "DOTT",
+      "type": "class",
+      "students": 0,
+      "colour": "#bfe3c0"
+    }
+  ],
+  "relief_days": []
+}

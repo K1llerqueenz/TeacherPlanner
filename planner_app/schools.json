@@ -1,0 +1,3458 @@
+[
+    {
+        "name": "ADAM ROAD PRIMARY SCHOOL"
+    },
+    {
+        "name": "AL-AMEEN COLLEGE"
+    },
+    {
+        "name": "AL-HIDAYAH ISLAMIC SCHOOL"
+    },
+    {
+        "name": "ALBANY COMMUNITY KINDERGARTEN"
+    },
+    {
+        "name": "ALBANY PRIMARY SCHOOL"
+    },
+    {
+        "name": "ALBANY SECONDARY EDUCATION SUPPORT CENTRE"
+    },
+    {
+        "name": "ALBANY SENIOR HIGH SCHOOL"
+    },
+    {
+        "name": "ALINJARRA PRIMARY SCHOOL"
+    },
+    {
+        "name": "ALKIMOS BAPTIST COLLEGE"
+    },
+    {
+        "name": "ALKIMOS BEACH PRIMARY SCHOOL"
+    },
+    {
+        "name": "ALKIMOS COLLEGE"
+    },
+    {
+        "name": "ALKIMOS PRIMARY SCHOOL"
+    },
+    {
+        "name": "ALL SAINTS' COLLEGE"
+    },
+    {
+        "name": "ALLANSON PRIMARY SCHOOL"
+    },
+    {
+        "name": "ALLENDALE PRIMARY SCHOOL"
+    },
+    {
+        "name": "ALTA-1 COLLEGE"
+    },
+    {
+        "name": "ALTA-1 KIMBERLEY COLLEGE"
+    },
+    {
+        "name": "AMAROO PRIMARY SCHOOL"
+    },
+    {
+        "name": "ANNE HAMERSLEY PRIMARY SCHOOL"
+    },
+    {
+        "name": "ANZAC TERRACE PRIMARY SCHOOL"
+    },
+    {
+        "name": "APPLECROSS PRIMARY SCHOOL"
+    },
+    {
+        "name": "APPLECROSS SENIOR HIGH SCHOOL"
+    },
+    {
+        "name": "AQUINAS COLLEGE"
+    },
+    {
+        "name": "ARANMORE CATHOLIC COLLEGE"
+    },
+    {
+        "name": "ARBOR GROVE PRIMARY SCHOOL"
+    },
+    {
+        "name": "ARDROSS PRIMARY SCHOOL"
+    },
+    {
+        "name": "ARMADALE EDUCATION SUPPORT CENTRE"
+    },
+    {
+        "name": "ARMADALE PRIMARY SCHOOL"
+    },
+    {
+        "name": "ARMADALE SENIOR HIGH SCHOOL"
+    },
+    {
+        "name": "ASHBURTON DRIVE PRIMARY SCHOOL"
+    },
+    {
+        "name": "ASHDALE PRIMARY SCHOOL"
+    },
+    {
+        "name": "ASHDALE SECONDARY COLLEGE"
+    },
+    {
+        "name": "ASHFIELD PRIMARY SCHOOL"
+    },
+    {
+        "name": "ASPIRI PRIMARY SCHOOL"
+    },
+    {
+        "name": "ASSUMPTION CATHOLIC PRIMARY SCHOOL"
+    },
+    {
+        "name": "ATLANTIS BEACH BAPTIST COLLEGE"
+    },
+    {
+        "name": "ATTADALE PRIMARY SCHOOL"
+    },
+    {
+        "name": "ATWELL COLLEGE"
+    },
+    {
+        "name": "ATWELL PRIMARY SCHOOL"
+    },
+    {
+        "name": "AUBIN GROVE PRIMARY SCHOOL"
+    },
+    {
+        "name": "AUGUSTA PRIMARY SCHOOL"
+    },
+    {
+        "name": "AUSTIN COVE BAPTIST COLLEGE"
+    },
+    {
+        "name": "AUSTRALIAN CHRISTIAN COLLEGE - DARLING DOWNS"
+    },
+    {
+        "name": "AUSTRALIAN CHRISTIAN COLLEGE - SOUTHLANDS"
+    },
+    {
+        "name": "AUSTRALIAN ISLAMIC COLLEGE DIANELLA"
+    },
+    {
+        "name": "AUSTRALIAN ISLAMIC COLLEGE FORRESTDALE"
+    },
+    {
+        "name": "AUSTRALIAN ISLAMIC COLLEGE HENLEY BROOK"
+    },
+    {
+        "name": "AUSTRALIAN ISLAMIC COLLEGE KEWDALE"
+    },
+    {
+        "name": "AUSTRALIAN ISLAMIC COLLEGE THORNLIE"
+    },
+    {
+        "name": "AUSTRALIND PRIMARY SCHOOL"
+    },
+    {
+        "name": "AUSTRALIND SENIOR HIGH SCHOOL"
+    },
+    {
+        "name": "AVELEY NORTH PRIMARY SCHOOL"
+    },
+    {
+        "name": "AVELEY PRIMARY SCHOOL"
+    },
+    {
+        "name": "AVELEY SECONDARY COLLEGE"
+    },
+    {
+        "name": "AVONVALE EDUCATION SUPPORT CENTRE"
+    },
+    {
+        "name": "AVONVALE PRIMARY SCHOOL"
+    },
+    {
+        "name": "BABAKIN PRIMARY SCHOOL"
+    },
+    {
+        "name": "BADGINGARRA PRIMARY SCHOOL"
+    },
+    {
+        "name": "BAKERS HILL PRIMARY SCHOOL"
+    },
+    {
+        "name": "BALCATTA PRIMARY SCHOOL"
+    },
+    {
+        "name": "BALCATTA SENIOR HIGH SCHOOL"
+    },
+    {
+        "name": "BALDIVIS GARDENS PRIMARY SCHOOL"
+    },
+    {
+        "name": "BALDIVIS PRIMARY SCHOOL"
+    },
+    {
+        "name": "BALDIVIS SECONDARY COLLEGE"
+    },
+    {
+        "name": "BALER PRIMARY SCHOOL"
+    },
+    {
+        "name": "BALGA PRIMARY SCHOOL"
+    },
+    {
+        "name": "BALGA SENIOR HIGH SCHOOL"
+    },
+    {
+        "name": "BALINGUP PRIMARY SCHOOL"
+    },
+    {
+        "name": "BALLAJURA COMMUNITY COLLEGE"
+    },
+    {
+        "name": "BALLAJURA PRIMARY SCHOOL"
+    },
+    {
+        "name": "BAMBARA PRIMARY SCHOOL"
+    },
+    {
+        "name": "BANKSIA GROVE PRIMARY SCHOOL"
+    },
+    {
+        "name": "BANKSIA MONTESSORI SCHOOL"
+    },
+    {
+        "name": "BANKSIA PARK PRIMARY SCHOOL"
+    },
+    {
+        "name": "BANNISTER CREEK PRIMARY SCHOOL"
+    },
+    {
+        "name": "BASSENDEAN PRIMARY SCHOOL"
+    },
+    {
+        "name": "BATEMAN PRIMARY SCHOOL"
+    },
+    {
+        "name": "BAYNTON WEST PRIMARY SCHOOL"
+    },
+    {
+        "name": "BAYSWATER PRIMARY SCHOOL"
+    },
+    {
+        "name": "BAYULU REMOTE COMMUNITY SCHOOL"
+    },
+    {
+        "name": "BEACHLANDS PRIMARY SCHOOL"
+    },
+    {
+        "name": "BEACON PRIMARY SCHOOL"
+    },
+    {
+        "name": "BEACONSFIELD PRIMARY SCHOOL"
+    },
+    {
+        "name": "BEAUMARIS PRIMARY SCHOOL"
+    },
+    {
+        "name": "BECKENHAM PRIMARY SCHOOL"
+    },
+    {
+        "name": "BEECHBORO CHRISTIAN SCHOOL"
+    },
+    {
+        "name": "BEECHBORO PRIMARY SCHOOL"
+    },
+    {
+        "name": "BEELIAR PRIMARY SCHOOL"
+    },
+    {
+        "name": "BEENYUP PRIMARY SCHOOL"
+    },
+    {
+        "name": "BELDON EDUCATION SUPPORT CENTRE"
+    },
+    {
+        "name": "BELDON PRIMARY SCHOOL"
+    },
+    {
+        "name": "BELMAY PRIMARY SCHOOL"
+    },
+    {
+        "name": "BELMONT CITY COLLEGE"
+    },
+    {
+        "name": "BELMONT PRIMARY SCHOOL"
+    },
+    {
+        "name": "BELRIDGE SECONDARY COLLEGE"
+    },
+    {
+        "name": "BELRIDGE SECONDARY EDUCATION SUPPORT CENTRE"
+    },
+    {
+        "name": "BENCUBBIN PRIMARY SCHOOL"
+    },
+    {
+        "name": "BENTLEY PRIMARY SCHOOL"
+    },
+    {
+        "name": "BERTRAM PRIMARY SCHOOL"
+    },
+    {
+        "name": "BETHEL CHRISTIAN SCHOOL"
+    },
+    {
+        "name": "BEVERLEY DISTRICT HIGH SCHOOL"
+    },
+    {
+        "name": "BIBRA LAKE PRIMARY SCHOOL"
+    },
+    {
+        "name": "BICTON PRIMARY SCHOOL"
+    },
+    {
+        "name": "BINDOON PRIMARY SCHOOL"
+    },
+    {
+        "name": "BINNU PRIMARY SCHOOL"
+    },
+    {
+        "name": "BIRLIRR NGAWIYIWU CATHOLIC SCHOOL"
+    },
+    {
+        "name": "BLETCHLEY PARK PRIMARY SCHOOL"
+    },
+    {
+        "name": "BLUE GUM MONTESSORI SCHOOL"
+    },
+    {
+        "name": "BLUFF POINT PRIMARY SCHOOL"
+    },
+    {
+        "name": "BOB HAWKE COLLEGE"
+    },
+    {
+        "name": "BODDINGTON DISTRICT HIGH SCHOOL"
+    },
+    {
+        "name": "BOLD PARK COMMUNITY SCHOOL"
+    },
+    {
+        "name": "BOLGART PRIMARY SCHOOL"
+    },
+    {
+        "name": "BOORAGOON PRIMARY SCHOOL"
+    },
+    {
+        "name": "BORDEN PRIMARY SCHOOL"
+    },
+    {
+        "name": "BOULDER PRIMARY SCHOOL"
+    },
+    {
+        "name": "BOYANUP PRIMARY SCHOOL"
+    },
+    {
+        "name": "BOYARE PRIMARY SCHOOL"
+    },
+    {
+        "name": "BOYUP BROOK DISTRICT HIGH SCHOOL"
+    },
+    {
+        "name": "BRABHAM PRIMARY SCHOOL"
+    },
+    {
+        "name": "BRAESIDE PRIMARY SCHOOL"
+    },
+    {
+        "name": "BRAMFIELD PARK PRIMARY SCHOOL"
+    },
+    {
+        "name": "BREMER BAY PRIMARY SCHOOL"
+    },
+    {
+        "name": "BRENTWOOD PRIMARY SCHOOL"
+    },
+    {
+        "name": "BRIDGETOWN HIGH SCHOOL"
+    },
+    {
+        "name": "BRIDGETOWN PRIMARY SCHOOL"
+    },
+    {
+        "name": "BROOKMAN PRIMARY SCHOOL"
+    },
+    {
+        "name": "BROOKTON DISTRICT HIGH SCHOOL"
+    },
+    {
+        "name": "BROOME NORTH PRIMARY SCHOOL"
+    },
+    {
+        "name": "BROOME PRIMARY SCHOOL"
+    },
+    {
+        "name": "BROOME SENIOR HIGH SCHOOL"
+    },
+    {
+        "name": "BROOMEHILL PRIMARY SCHOOL"
+    },
+    {
+        "name": "BRUCE ROCK DISTRICT HIGH SCHOOL"
+    },
+    {
+        "name": "BRUNSWICK JUNCTION PRIMARY SCHOOL"
+    },
+    {
+        "name": "BULL CREEK PRIMARY SCHOOL"
+    },
+    {
+        "name": "BULLSBROOK COLLEGE"
+    },
+    {
+        "name": "BULLSBROOK COMMUNITY KINDERGARTEN"
+    },
+    {
+        "name": "BUNBURY BAPTIST COLLEGE"
+    },
+    {
+        "name": "BUNBURY CATHEDRAL GRAMMAR SCHOOL"
+    },
+    {
+        "name": "BUNBURY CATHOLIC COLLEGE"
+    },
+    {
+        "name": "BUNBURY PRIMARY SCHOOL"
+    },
+    {
+        "name": "BUNBURY SENIOR HIGH SCHOOL"
+    },
+    {
+        "name": "BUNGAREE PRIMARY SCHOOL"
+    },
+    {
+        "name": "BURBRIDGE SCHOOL"
+    },
+    {
+        "name": "BURNS BEACH PRIMARY SCHOOL"
+    },
+    {
+        "name": "BURRENDAH PRIMARY SCHOOL"
+    },
+    {
+        "name": "BURRINGURRAH REMOTE COMMUNITY SCHOOL"
+    },
+    {
+        "name": "BUSSELTON PRIMARY SCHOOL"
+    },
+    {
+        "name": "BUSSELTON SENIOR HIGH SCHOOL"
+    },
+    {
+        "name": "BUTLER COLLEGE"
+    },
+    {
+        "name": "BUTLER PRIMARY SCHOOL"
+    },
+    {
+        "name": "BYFORD COMMUNITY KINDERGARTEN"
+    },
+    {
+        "name": "BYFORD JOHN CALVIN SCHOOL"
+    },
+    {
+        "name": "BYFORD PRIMARY SCHOOL"
+    },
+    {
+        "name": "BYFORD SECONDARY COLLEGE"
+    },
+    {
+        "name": "CABLE BEACH PRIMARY SCHOOL"
+    },
+    {
+        "name": "CADOUX PRIMARY SCHOOL"
+    },
+    {
+        "name": "CALADENIA PRIMARY SCHOOL"
+    },
+    {
+        "name": "CALINGIRI PRIMARY SCHOOL"
+    },
+    {
+        "name": "CALISTA PRIMARY SCHOOL"
+    },
+    {
+        "name": "CAMBOON PRIMARY SCHOOL"
+    },
+    {
+        "name": "CAMPBELL PRIMARY SCHOOL"
+    },
+    {
+        "name": "CANNING COLLEGE"
+    },
+    {
+        "name": "CANNING VALE COLLEGE"
+    },
+    {
+        "name": "CANNING VALE EDUCATION SUPPORT CENTRE"
+    },
+    {
+        "name": "CANNING VALE PRIMARY SCHOOL"
+    },
+    {
+        "name": "CANNINGTON COMMUNITY COLLEGE"
+    },
+    {
+        "name": "CANNINGTON COMMUNITY EDUCATION SUPPORT CENTRE"
+    },
+    {
+        "name": "CAPE NATURALISTE COLLEGE"
+    },
+    {
+        "name": "CAPEL PRIMARY SCHOOL"
+    },
+    {
+        "name": "CARALEE COMMUNITY SCHOOL"
+    },
+    {
+        "name": "CARCOOLA PRIMARY SCHOOL"
+    },
+    {
+        "name": "CAREY BAPTIST COLLEGE"
+    },
+    {
+        "name": "CAREY BAPTIST COLLEGE - FORRESTDALE"
+    },
+    {
+        "name": "CAREY PARK PRIMARY SCHOOL"
+    },
+    {
+        "name": "CARINE PRIMARY SCHOOL"
+    },
+    {
+        "name": "CARINE SENIOR HIGH SCHOOL"
+    },
+    {
+        "name": "CARLISLE PRIMARY SCHOOL"
+    },
+    {
+        "name": "CARMEL ADVENTIST COLLEGE"
+    },
+    {
+        "name": "CARMEL ADVENTIST COLLEGE PRIMARY SCHOOL"
+    },
+    {
+        "name": "CARMEL SCHOOL"
+    },
+    {
+        "name": "CARNABY RISE PRIMARY SCHOOL"
+    },
+    {
+        "name": "CARNAMAH DISTRICT HIGH SCHOOL"
+    },
+    {
+        "name": "CARNARVON CHRISTIAN SCHOOL"
+    },
+    {
+        "name": "CARNARVON COMMUNITY COLLEGE"
+    },
+    {
+        "name": "CARNARVON SCHOOL OF THE AIR"
+    },
+    {
+        "name": "CARRAMAR PRIMARY SCHOOL"
+    },
+    {
+        "name": "CARSON STREET SCHOOL"
+    },
+    {
+        "name": "CASA MIA MONTESSORI COMMUNITY SCHOOL"
+    },
+    {
+        "name": "CASCADE PRIMARY SCHOOL"
+    },
+    {
+        "name": "CASSIA EDUCATION SUPPORT CENTRE"
+    },
+    {
+        "name": "CASSIA PRIMARY SCHOOL"
+    },
+    {
+        "name": "CASTLEREAGH SCHOOL"
+    },
+    {
+        "name": "CASTLETOWN PRIMARY SCHOOL"
+    },
+    {
+        "name": "CAVERSHAM PRIMARY SCHOOL"
+    },
+    {
+        "name": "CAVERSHAM VALLEY PRIMARY SCHOOL"
+    },
+    {
+        "name": "CECIL ANDREWS COLLEGE"
+    },
+    {
+        "name": "CENTRAL MIDLANDS SENIOR HIGH SCHOOL"
+    },
+    {
+        "name": "CERVANTES PRIMARY SCHOOL"
+    },
+    {
+        "name": "CHALLIS COMMUNITY PRIMARY SCHOOL"
+    },
+    {
+        "name": "CHAMPION BAY SENIOR HIGH SCHOOL"
+    },
+    {
+        "name": "CHAPMAN VALLEY PRIMARY SCHOOL"
+    },
+    {
+        "name": "CHARTHOUSE PRIMARY SCHOOL"
+    },
+    {
+        "name": "CHIDLOW PRIMARY SCHOOL"
+    },
+    {
+        "name": "CHILD SIDE SCHOOL"
+    },
+    {
+        "name": "CHISHOLM CATHOLIC COLLEGE"
+    },
+    {
+        "name": "CHRIST CHURCH GRAMMAR SCHOOL"
+    },
+    {
+        "name": "CHRIST THE KING CATHOLIC SCHOOL"
+    },
+    {
+        "name": "CHRIST THE KING SCHOOL"
+    },
+    {
+        "name": "CHRISTIAN ABORIGINAL PARENT-DIRECTED SCHOOL"
+    },
+    {
+        "name": "CHRISTIAN ABORIGINAL PARENT-DIRECTED SCHOOL - KURRAWANG"
+    },
+    {
+        "name": "CHRISTIAN BROTHERS' COLLEGE"
+    },
+    {
+        "name": "CHRISTMAS ISLAND DISTRICT HIGH SCHOOL"
+    },
+    {
+        "name": "CHRYSALIS MONTESSORI SCHOOL"
+    },
+    {
+        "name": "CHURCHLANDS PRIMARY SCHOOL"
+    },
+    {
+        "name": "CHURCHLANDS SENIOR HIGH SCHOOL"
+    },
+    {
+        "name": "CITY BEACH PRIMARY SCHOOL"
+    },
+    {
+        "name": "CLARKSON COMMUNITY HIGH SCHOOL"
+    },
+    {
+        "name": "CLARKSON PRIMARY SCHOOL"
+    },
+    {
+        "name": "CLAYTON VIEW PRIMARY SCHOOL"
+    },
+    {
+        "name": "CLIFTON HILLS PRIMARY SCHOOL"
+    },
+    {
+        "name": "CLIFTON PARK PRIMARY SCHOOL"
+    },
+    {
+        "name": "CLONTARF ABORIGINAL COLLEGE"
+    },
+    {
+        "name": "CLOVERDALE EDUCATION SUPPORT CENTRE"
+    },
+    {
+        "name": "CLOVERDALE PRIMARY SCHOOL"
+    },
+    {
+        "name": "COASTAL LAKES COLLEGE"
+    },
+    {
+        "name": "COCOS ISLANDS DISTRICT HIGH SCHOOL"
+    },
+    {
+        "name": "COLLEGE ROW SCHOOL"
+    },
+    {
+        "name": "COLLIE SENIOR HIGH SCHOOL"
+    },
+    {
+        "name": "COLLIER PRIMARY SCHOOL"
+    },
+    {
+        "name": "COMET BAY COLLEGE"
+    },
+    {
+        "name": "COMET BAY PRIMARY SCHOOL"
+    },
+    {
+        "name": "COMMUNICARE ACADEMY"
+    },
+    {
+        "name": "COMO PRIMARY SCHOOL"
+    },
+    {
+        "name": "COMO SECONDARY COLLEGE"
+    },
+    {
+        "name": "CONDINGUP PRIMARY SCHOOL"
+    },
+    {
+        "name": "CONNOLLY PRIMARY SCHOOL"
+    },
+    {
+        "name": "COODANUP COLLEGE"
+    },
+    {
+        "name": "COOGEE PRIMARY SCHOOL"
+    },
+    {
+        "name": "COOINDA PRIMARY SCHOOL"
+    },
+    {
+        "name": "COOLBELLUP COMMUNITY SCHOOL"
+    },
+    {
+        "name": "COOLBELLUP LEARNING CENTRE"
+    },
+    {
+        "name": "COOLBINIA PRIMARY SCHOOL"
+    },
+    {
+        "name": "COOLGARDIE PRIMARY SCHOOL"
+    },
+    {
+        "name": "COOLOONGUP PRIMARY SCHOOL"
+    },
+    {
+        "name": "COOROW PRIMARY SCHOOL"
+    },
+    {
+        "name": "CORNERSTONE CHRISTIAN COLLEGE"
+    },
+    {
+        "name": "CORPUS CHRISTI COLLEGE"
+    },
+    {
+        "name": "CORRIGIN DISTRICT HIGH SCHOOL"
+    },
+    {
+        "name": "COTTESLOE PRIMARY SCHOOL"
+    },
+    {
+        "name": "COURT GRAMMAR SCHOOL"
+    },
+    {
+        "name": "COWARAMUP PRIMARY SCHOOL"
+    },
+    {
+        "name": "CRAIGIE HEIGHTS PRIMARY SCHOOL"
+    },
+    {
+        "name": "CRANBROOK PRIMARY SCHOOL"
+    },
+    {
+        "name": "CREANEY EDUCATION SUPPORT CENTRE"
+    },
+    {
+        "name": "CREANEY PRIMARY SCHOOL"
+    },
+    {
+        "name": "CUE PRIMARY SCHOOL"
+    },
+    {
+        "name": "CUNDERDIN DISTRICT HIGH SCHOOL"
+    },
+    {
+        "name": "CURRAMBINE PRIMARY SCHOOL"
+    },
+    {
+        "name": "CURTIN PRIMARY SCHOOL"
+    },
+    {
+        "name": "CYRIL JACKSON SENIOR CAMPUS"
+    },
+    {
+        "name": "CYRIL JACKSON SENIOR CAMPUS EDUCATION SUPPORT CENTRE"
+    },
+    {
+        "name": "DALE CHRISTIAN COLLEGE WA"
+    },
+    {
+        "name": "DALKEITH PRIMARY SCHOOL"
+    },
+    {
+        "name": "DALMAIN PRIMARY SCHOOL"
+    },
+    {
+        "name": "DALWALLINU DISTRICT HIGH SCHOOL"
+    },
+    {
+        "name": "DALYELLUP COLLEGE"
+    },
+    {
+        "name": "DALYELLUP PRIMARY SCHOOL"
+    },
+    {
+        "name": "DAMPIER PRIMARY SCHOOL"
+    },
+    {
+        "name": "DANDARAGAN PRIMARY SCHOOL"
+    },
+    {
+        "name": "DARDANUP PRIMARY SCHOOL"
+    },
+    {
+        "name": "DARKAN PRIMARY SCHOOL"
+    },
+    {
+        "name": "DARLING RANGE SPORTS COLLEGE"
+    },
+    {
+        "name": "DARLINGTON PRIMARY SCHOOL"
+    },
+    {
+        "name": "DAVALLIA PRIMARY SCHOOL"
+    },
+    {
+        "name": "DAWSON PARK PRIMARY SCHOOL"
+    },
+    {
+        "name": "DAWUL REMOTE COMMUNITY SCHOOL"
+    },
+    {
+        "name": "DAYTON PRIMARY SCHOOL"
+    },
+    {
+        "name": "DEANMORE PRIMARY SCHOOL"
+    },
+    {
+        "name": "DENMARK PRIMARY SCHOOL"
+    },
+    {
+        "name": "DENMARK SENIOR HIGH SCHOOL"
+    },
+    {
+        "name": "DERBY DISTRICT HIGH SCHOOL"
+    },
+    {
+        "name": "DIANELLA HEIGHTS PRIMARY SCHOOL"
+    },
+    {
+        "name": "DIANELLA PRIMARY COLLEGE"
+    },
+    {
+        "name": "DIANELLA SECONDARY COLLEGE"
+    },
+    {
+        "name": "DIANELLA SECONDARY COLLEGE EDUCATION SUPPORT CENTRE"
+    },
+    {
+        "name": "DIVINE MERCY COLLEGE"
+    },
+    {
+        "name": "DJIDI DJIDI ABORIGINAL SCHOOL"
+    },
+    {
+        "name": "DJUGERARI REMOTE COMMUNITY SCHOOL"
+    },
+    {
+        "name": "DONGARA DISTRICT HIGH SCHOOL"
+    },
+    {
+        "name": "DONNYBROOK DISTRICT HIGH SCHOOL"
+    },
+    {
+        "name": "DOUBLEVIEW PRIMARY SCHOOL"
+    },
+    {
+        "name": "DOWERIN DISTRICT HIGH SCHOOL"
+    },
+    {
+        "name": "DRYANDRA PRIMARY SCHOOL"
+    },
+    {
+        "name": "DUDLEY PARK PRIMARY SCHOOL"
+    },
+    {
+        "name": "DUMBLEYUNG PRIMARY SCHOOL"
+    },
+    {
+        "name": "DUNCRAIG PRIMARY SCHOOL"
+    },
+    {
+        "name": "DUNCRAIG SENIOR HIGH SCHOOL"
+    },
+    {
+        "name": "DUNSBOROUGH CHRISTIAN COLLEGE"
+    },
+    {
+        "name": "DUNSBOROUGH PRIMARY SCHOOL"
+    },
+    {
+        "name": "DURHAM ROAD SCHOOL"
+    },
+    {
+        "name": "DWELLINGUP PRIMARY SCHOOL"
+    },
+    {
+        "name": "EAST BEECHBORO PRIMARY SCHOOL"
+    },
+    {
+        "name": "EAST BUTLER PRIMARY SCHOOL"
+    },
+    {
+        "name": "EAST FREMANTLE PRIMARY SCHOOL"
+    },
+    {
+        "name": "EAST HAMERSLEY PRIMARY SCHOOL"
+    },
+    {
+        "name": "EAST HAMILTON HILL PRIMARY SCHOOL"
+    },
+    {
+        "name": "EAST KALGOORLIE PRIMARY SCHOOL"
+    },
+    {
+        "name": "EAST KENWICK PRIMARY SCHOOL"
+    },
+    {
+        "name": "EAST KIMBERLEY COLLEGE"
+    },
+    {
+        "name": "EAST MADDINGTON PRIMARY SCHOOL"
+    },
+    {
+        "name": "EAST MANJIMUP PRIMARY SCHOOL"
+    },
+    {
+        "name": "EAST NARROGIN PRIMARY SCHOOL"
+    },
+    {
+        "name": "EAST VICTORIA PARK EDUCATION SUPPORT CENTRE"
+    },
+    {
+        "name": "EAST VICTORIA PARK PRIMARY SCHOOL"
+    },
+    {
+        "name": "EAST WAIKIKI PRIMARY SCHOOL"
+    },
+    {
+        "name": "EAST WANNEROO PRIMARY SCHOOL"
+    },
+    {
+        "name": "EASTERN GOLDFIELDS COLLEGE"
+    },
+    {
+        "name": "EASTERN GOLDFIELDS EDUCATION SUPPORT CENTRE"
+    },
+    {
+        "name": "EASTERN HILLS COMMUNITY KINDERGARTEN AND PLAYGROUP"
+    },
+    {
+        "name": "EASTERN HILLS SENIOR HIGH SCHOOL"
+    },
+    {
+        "name": "EATON COMMUNITY COLLEGE"
+    },
+    {
+        "name": "EATON PRIMARY SCHOOL"
+    },
+    {
+        "name": "EDDYSTONE PRIMARY SCHOOL"
+    },
+    {
+        "name": "EDEN HILL PRIMARY SCHOOL"
+    },
+    {
+        "name": "EDGEWATER PRIMARY SCHOOL"
+    },
+    {
+        "name": "EDNEY PRIMARY SCHOOL"
+    },
+    {
+        "name": "EGLINTON BEACH PRIMARY SCHOOL"
+    },
+    {
+        "name": "ELLEN STIRLING PRIMARY SCHOOL"
+    },
+    {
+        "name": "ELLENBROOK CHRISTIAN COLLEGE"
+    },
+    {
+        "name": "ELLENBROOK PRIMARY SCHOOL"
+    },
+    {
+        "name": "ELLENBROOK SECONDARY COLLEGE"
+    },
+    {
+        "name": "EMBLETON PRIMARY SCHOOL"
+    },
+    {
+        "name": "EMMANUEL CATHOLIC COLLEGE"
+    },
+    {
+        "name": "EMMANUEL CHRISTIAN COMMUNITY SCHOOL"
+    },
+    {
+        "name": "EMMAUS CATHOLIC PRIMARY SCHOOL"
+    },
+    {
+        "name": "ENDEAVOUR EDUCATION SUPPORT CENTRE"
+    },
+    {
+        "name": "ENDEAVOUR PRIMARY SCHOOL"
+    },
+    {
+        "name": "ENEABBA PRIMARY SCHOOL"
+    },
+    {
+        "name": "ESPERANCE ANGLICAN COMMUNITY SCHOOL"
+    },
+    {
+        "name": "ESPERANCE CHRISTIAN SCHOOL"
+    },
+    {
+        "name": "ESPERANCE EDUCATION SUPPORT CENTRE"
+    },
+    {
+        "name": "ESPERANCE PRIMARY SCHOOL"
+    },
+    {
+        "name": "ESPERANCE SENIOR HIGH SCHOOL"
+    },
+    {
+        "name": "ETON FARM PRIMARY SCHOOL"
+    },
+    {
+        "name": "EXCELSIOR PRIMARY SCHOOL"
+    },
+    {
+        "name": "EXMOUTH DISTRICT HIGH SCHOOL"
+    },
+    {
+        "name": "FAIRBRIDGE COLLEGE"
+    },
+    {
+        "name": "FAIRVIEW PRIMARY SCHOOL"
+    },
+    {
+        "name": "FALCON PRIMARY SCHOOL"
+    },
+    {
+        "name": "FALLS ROAD PRIMARY SCHOOL"
+    },
+    {
+        "name": "FITZROY VALLEY DISTRICT HIGH SCHOOL"
+    },
+    {
+        "name": "FLINDERS PARK PRIMARY SCHOOL"
+    },
+    {
+        "name": "FLOREAT PARK PRIMARY SCHOOL"
+    },
+    {
+        "name": "FOREST CRESCENT PRIMARY SCHOOL"
+    },
+    {
+        "name": "FORRESTDALE PRIMARY SCHOOL"
+    },
+    {
+        "name": "FORRESTFIELD PRIMARY SCHOOL"
+    },
+    {
+        "name": "FOUNDATION CHRISTIAN COLLEGE"
+    },
+    {
+        "name": "FOUNTAIN COLLEGE"
+    },
+    {
+        "name": "FRANCIS JORDAN CATHOLIC SCHOOL"
+    },
+    {
+        "name": "FRANKLAND RIVER PRIMARY SCHOOL"
+    },
+    {
+        "name": "FREDERICK IRWIN ANGLICAN SCHOOL"
+    },
+    {
+        "name": "FREMANTLE CHRISTIAN COLLEGE"
+    },
+    {
+        "name": "FREMANTLE COLLEGE"
+    },
+    {
+        "name": "FREMANTLE LANGUAGE DEVELOPMENT CENTRE"
+    },
+    {
+        "name": "FREMANTLE PRIMARY SCHOOL"
+    },
+    {
+        "name": "FRESHWATER BAY PRIMARY SCHOOL"
+    },
+    {
+        "name": "GASCOYNE JUNCTION REMOTE COMMUNITY SCHOOL"
+    },
+    {
+        "name": "GEOGRAPHE EDUCATION SUPPORT CENTRE"
+    },
+    {
+        "name": "GEOGRAPHE PRIMARY SCHOOL"
+    },
+    {
+        "name": "GEORGIANA MOLLOY ANGLICAN SCHOOL"
+    },
+    {
+        "name": "GERALDTON CHRISTIAN COLLEGE"
+    },
+    {
+        "name": "GERALDTON FLEXIBLE SCHOOL"
+    },
+    {
+        "name": "GERALDTON GRAMMAR SCHOOL"
+    },
+    {
+        "name": "GERALDTON PRIMARY SCHOOL"
+    },
+    {
+        "name": "GERALDTON SENIOR HIGH SCHOOL"
+    },
+    {
+        "name": "GIBBS STREET PRIMARY SCHOOL"
+    },
+    {
+        "name": "GIDGEGANNUP PRIMARY SCHOOL"
+    },
+    {
+        "name": "GILMORE COLLEGE"
+    },
+    {
+        "name": "GINGIN DISTRICT HIGH SCHOOL"
+    },
+    {
+        "name": "GIRRAWHEEN SENIOR HIGH SCHOOL"
+    },
+    {
+        "name": "GLADYS NEWTON SCHOOL"
+    },
+    {
+        "name": "GLEN FORREST COMMUNITY KINDERGARTEN"
+    },
+    {
+        "name": "GLEN FORREST PRIMARY SCHOOL"
+    },
+    {
+        "name": "GLEN HUON PRIMARY SCHOOL"
+    },
+    {
+        "name": "GLENCOE PRIMARY SCHOOL"
+    },
+    {
+        "name": "GLENDALE PRIMARY SCHOOL"
+    },
+    {
+        "name": "GLENGARRY PRIMARY SCHOOL"
+    },
+    {
+        "name": "GNOWANGERUP DISTRICT HIGH SCHOOL"
+    },
+    {
+        "name": "GOLDEN BAY PRIMARY SCHOOL"
+    },
+    {
+        "name": "GOLDEN HILL STEINER SCHOOL"
+    },
+    {
+        "name": "GOLDFIELDS BAPTIST COLLEGE"
+    },
+    {
+        "name": "GOOD SHEPHERD CATHOLIC PRIMARY SCHOOL"
+    },
+    {
+        "name": "GOOD SHEPHERD CATHOLIC SCHOOL"
+    },
+    {
+        "name": "GOOLLELAL PRIMARY SCHOOL"
+    },
+    {
+        "name": "GOOMALLING PRIMARY SCHOOL"
+    },
+    {
+        "name": "GOOSEBERRY HILL PRIMARY SCHOOL"
+    },
+    {
+        "name": "GOSNELLS PRIMARY SCHOOL"
+    },
+    {
+        "name": "GOVERNOR STIRLING SENIOR HIGH SCHOOL"
+    },
+    {
+        "name": "GRACE CHRISTIAN SCHOOL"
+    },
+    {
+        "name": "GRANDIS PRIMARY SCHOOL"
+    },
+    {
+        "name": "GREAT SOUTHERN GRAMMAR SCHOOL"
+    },
+    {
+        "name": "GREENBUSHES PRIMARY SCHOOL"
+    },
+    {
+        "name": "GREENFIELDS PRIMARY SCHOOL"
+    },
+    {
+        "name": "GREENMOUNT PRIMARY SCHOOL"
+    },
+    {
+        "name": "GREENWOOD COLLEGE"
+    },
+    {
+        "name": "GREENWOOD PRIMARY SCHOOL"
+    },
+    {
+        "name": "GROVELANDS PRIMARY SCHOOL"
+    },
+    {
+        "name": "GUILDFORD GRAMMAR SCHOOL"
+    },
+    {
+        "name": "GUILDFORD PRIMARY SCHOOL"
+    },
+    {
+        "name": "GWYNNE PARK EDUCATION SUPPORT CENTRE"
+    },
+    {
+        "name": "GWYNNE PARK PRIMARY SCHOOL"
+    },
+    {
+        "name": "HALE SCHOOL"
+    },
+    {
+        "name": "HALIDON PRIMARY SCHOOL"
+    },
+    {
+        "name": "HALLS CREEK DISTRICT HIGH SCHOOL"
+    },
+    {
+        "name": "HALLS HEAD COLLEGE"
+    },
+    {
+        "name": "HALLS HEAD COLLEGE EDUCATION SUPPORT CENTRE"
+    },
+    {
+        "name": "HALLS HEAD PRIMARY SCHOOL"
+    },
+    {
+        "name": "HAMMOND PARK CATHOLIC PRIMARY SCHOOL"
+    },
+    {
+        "name": "HAMMOND PARK PRIMARY SCHOOL"
+    },
+    {
+        "name": "HAMMOND PARK SECONDARY COLLEGE"
+    },
+    {
+        "name": "HAMPTON PARK PRIMARY SCHOOL"
+    },
+    {
+        "name": "HAMPTON SENIOR HIGH SCHOOL"
+    },
+    {
+        "name": "HANNANS PRIMARY SCHOOL"
+    },
+    {
+        "name": "HARMONY PRIMARY SCHOOL"
+    },
+    {
+        "name": "HARRISDALE PRIMARY SCHOOL"
+    },
+    {
+        "name": "HARRISDALE SENIOR HIGH SCHOOL"
+    },
+    {
+        "name": "HARVEY PRIMARY SCHOOL"
+    },
+    {
+        "name": "HARVEY SENIOR HIGH SCHOOL"
+    },
+    {
+        "name": "HAVENPORT MSL COLLEGE"
+    },
+    {
+        "name": "HAWKER PARK PRIMARY SCHOOL"
+    },
+    {
+        "name": "HAZEL ORME COMMUNITY KINDERGARTEN"
+    },
+    {
+        "name": "HEATHRIDGE PRIMARY SCHOOL"
+    },
+    {
+        "name": "HEDLAND SENIOR HIGH SCHOOL"
+    },
+    {
+        "name": "HELENA COLLEGE"
+    },
+    {
+        "name": "HELENA RIVER WALDORF SCHOOL"
+    },
+    {
+        "name": "HELENA VALLEY PRIMARY SCHOOL"
+    },
+    {
+        "name": "HENLEY BROOK PRIMARY SCHOOL"
+    },
+    {
+        "name": "HENSMAN STREET ELEMENTARY"
+    },
+    {
+        "name": "HERITAGE COLLEGE PERTH"
+    },
+    {
+        "name": "HERNE HILL PRIMARY SCHOOL"
+    },
+    {
+        "name": "HIGH WYCOMBE PRIMARY SCHOOL"
+    },
+    {
+        "name": "HIGHGATE PRIMARY SCHOOL"
+    },
+    {
+        "name": "HILLARYS COMMUNITY KINDERGARTEN"
+    },
+    {
+        "name": "HILLARYS PRIMARY SCHOOL"
+    },
+    {
+        "name": "HILLCREST PRIMARY SCHOOL"
+    },
+    {
+        "name": "HILLMAN PRIMARY SCHOOL"
+    },
+    {
+        "name": "HILLSIDE CHRISTIAN COLLEGE"
+    },
+    {
+        "name": "HILTON PRIMARY SCHOOL"
+    },
+    {
+        "name": "HOCKING PRIMARY SCHOOL"
+    },
+    {
+        "name": "HOLLAND STREET SCHOOL"
+    },
+    {
+        "name": "HOLLYWOOD PRIMARY SCHOOL"
+    },
+    {
+        "name": "HOLY CROSS COLLEGE"
+    },
+    {
+        "name": "HOLY ROSARY SCHOOL"
+    },
+    {
+        "name": "HOLY ROSARY SCHOOL"
+    },
+    {
+        "name": "HOLY SPIRIT SCHOOL"
+    },
+    {
+        "name": "HONEYWOOD PRIMARY SCHOOL"
+    },
+    {
+        "name": "HOPE CHRISTIAN COLLEGE"
+    },
+    {
+        "name": "HOPETOUN PRIMARY SCHOOL"
+    },
+    {
+        "name": "HUDSON PARK PRIMARY SCHOOL"
+    },
+    {
+        "name": "HUNTINGDALE PRIMARY SCHOOL"
+    },
+    {
+        "name": "HYDEN PRIMARY SCHOOL"
+    },
+    {
+        "name": "ILLAWARRA PRIMARY SCHOOL"
+    },
+    {
+        "name": "IMMACULATE HEART COLLEGE"
+    },
+    {
+        "name": "INDIE SCHOOL WESTERN AUSTRALIA"
+    },
+    {
+        "name": "INFANT JESUS SCHOOL"
+    },
+    {
+        "name": "INGLEWOOD PRIMARY SCHOOL"
+    },
+    {
+        "name": "INTERNATIONAL SCHOOL OF WESTERN AUSTRALIA"
+    },
+    {
+        "name": "IONA PRESENTATION COLLEGE"
+    },
+    {
+        "name": "IRENE MCCORMACK CATHOLIC COLLEGE"
+    },
+    {
+        "name": "JANDAKOT PRIMARY SCHOOL"
+    },
+    {
+        "name": "JARRAHDALE PRIMARY SCHOOL"
+    },
+    {
+        "name": "JERDACUTTUP PRIMARY SCHOOL"
+    },
+    {
+        "name": "JERRAMUNGUP DISTRICT HIGH SCHOOL"
+    },
+    {
+        "name": "JIGALONG REMOTE COMMUNITY SCHOOL"
+    },
+    {
+        "name": "JILBUP PRIMARY SCHOOL"
+    },
+    {
+        "name": "JOHN BUTLER PRIMARY COLLEGE"
+    },
+    {
+        "name": "JOHN CALVIN CHRISTIAN COLLEGE"
+    },
+    {
+        "name": "JOHN CALVIN SCHOOL"
+    },
+    {
+        "name": "JOHN CURTIN COLLEGE OF THE ARTS"
+    },
+    {
+        "name": "JOHN FORREST SECONDARY COLLEGE"
+    },
+    {
+        "name": "JOHN PAUL COLLEGE"
+    },
+    {
+        "name": "JOHN PUJAJANGKA PIYIRN SCHOOL"
+    },
+    {
+        "name": "JOHN SEPTIMUS ROE ANGLICAN COMMUNITY SCHOOL"
+    },
+    {
+        "name": "JOHN TONKIN COLLEGE"
+    },
+    {
+        "name": "JOHN TONKIN COLLEGE EDUCATION SUPPORT CENTRE"
+    },
+    {
+        "name": "JOHN WOLLASTON ANGLICAN COMMUNITY SCHOOL"
+    },
+    {
+        "name": "JOHN XXIII COLLEGE"
+    },
+    {
+        "name": "JOLIMONT PRIMARY SCHOOL"
+    },
+    {
+        "name": "JOONDALUP EDUCATION SUPPORT CENTRE"
+    },
+    {
+        "name": "JOONDALUP PRIMARY SCHOOL"
+    },
+    {
+        "name": "JOSEPH BANKS SECONDARY COLLEGE"
+    },
+    {
+        "name": "JUNGDRANUNG REMOTE COMMUNITY SCHOOL"
+    },
+    {
+        "name": "JURIEN BAY DISTRICT HIGH SCHOOL"
+    },
+    {
+        "name": "KALAMUNDA CHRISTIAN SCHOOL"
+    },
+    {
+        "name": "KALAMUNDA PRIMARY EDUCATION SUPPORT CENTRE"
+    },
+    {
+        "name": "KALAMUNDA PRIMARY SCHOOL"
+    },
+    {
+        "name": "KALAMUNDA SECONDARY EDUCATION SUPPORT CENTRE"
+    },
+    {
+        "name": "KALAMUNDA SENIOR HIGH SCHOOL"
+    },
+    {
+        "name": "KALANNIE PRIMARY SCHOOL"
+    },
+    {
+        "name": "KALBARRI DISTRICT HIGH SCHOOL"
+    },
+    {
+        "name": "KALGOORLIE PRIMARY SCHOOL"
+    },
+    {
+        "name": "KALGOORLIE SCHOOL OF THE AIR"
+    },
+    {
+        "name": "KALGOORLIE-BOULDER COMMUNITY HIGH SCHOOL"
+    },
+    {
+        "name": "KALUMBURU REMOTE COMMUNITY SCHOOL"
+    },
+    {
+        "name": "KAMBALDA PRIMARY SCHOOL"
+    },
+    {
+        "name": "KAMBALDA WEST DISTRICT HIGH SCHOOL"
+    },
+    {
+        "name": "KAPINARA PRIMARY SCHOOL"
+    },
+    {
+        "name": "KARALUNDI COLLEGE"
+    },
+    {
+        "name": "KARDINYA PRIMARY SCHOOL"
+    },
+    {
+        "name": "KARRATHA PRIMARY SCHOOL"
+    },
+    {
+        "name": "KARRATHA SENIOR HIGH SCHOOL"
+    },
+    {
+        "name": "KARRIDALE PRIMARY SCHOOL"
+    },
+    {
+        "name": "KARRINYUP PRIMARY SCHOOL"
+    },
+    {
+        "name": "KATANNING PRIMARY SCHOOL"
+    },
+    {
+        "name": "KATANNING SENIOR HIGH SCHOOL"
+    },
+    {
+        "name": "KEARNAN COLLEGE"
+    },
+    {
+        "name": "KELLERBERRIN DISTRICT HIGH SCHOOL"
+    },
+    {
+        "name": "KELMSCOTT JOHN CALVIN SCHOOL"
+    },
+    {
+        "name": "KELMSCOTT PRIMARY SCHOOL"
+    },
+    {
+        "name": "KELMSCOTT SENIOR HIGH SCHOOL"
+    },
+    {
+        "name": "KENDENUP PRIMARY SCHOOL"
+    },
+    {
+        "name": "KENNEDY BAPTIST COLLEGE"
+    },
+    {
+        "name": "KENSINGTON PRIMARY SCHOOL"
+    },
+    {
+        "name": "KENSINGTON SECONDARY SCHOOL"
+    },
+    {
+        "name": "KENT STREET SENIOR HIGH SCHOOL"
+    },
+    {
+        "name": "KENWICK SCHOOL"
+    },
+    {
+        "name": "KERRY STREET COMMUNITY SCHOOL"
+    },
+    {
+        "name": "KEWDALE PRIMARY SCHOOL"
+    },
+    {
+        "name": "KIARA COLLEGE"
+    },
+    {
+        "name": "KIMBERLEY SCHOOL OF THE AIR"
+    },
+    {
+        "name": "KINDAIMANNA COMMUNITY KINDERGARTEN"
+    },
+    {
+        "name": "KINGSLEY PRIMARY SCHOOL"
+    },
+    {
+        "name": "KINGSTON PRIMARY SCHOOL"
+    },
+    {
+        "name": "KINGSWAY CHRISTIAN COLLEGE"
+    },
+    {
+        "name": "KINROSS COLLEGE"
+    },
+    {
+        "name": "KINROSS PRIMARY SCHOOL"
+    },
+    {
+        "name": "KIRUP PRIMARY SCHOOL"
+    },
+    {
+        "name": "KOJONUP DISTRICT HIGH SCHOOL"
+    },
+    {
+        "name": "KOLBE CATHOLIC COLLEGE"
+    },
+    {
+        "name": "KONDININ PRIMARY SCHOOL"
+    },
+    {
+        "name": "KOONDOOLA PRIMARY SCHOOL"
+    },
+    {
+        "name": "KOORANA EDUCATION SUPPORT CENTRE"
+    },
+    {
+        "name": "KOORANA PRIMARY SCHOOL"
+    },
+    {
+        "name": "KOORDA PRIMARY SCHOOL"
+    },
+    {
+        "name": "KUKERIN PRIMARY SCHOOL"
+    },
+    {
+        "name": "KULIN DISTRICT HIGH SCHOOL"
+    },
+    {
+        "name": "KULKARRIYA COMMUNITY SCHOOL"
+    },
+    {
+        "name": "KURURRUNGKU CATHOLIC EDUCATION CENTRE"
+    },
+    {
+        "name": "KWOORABUP NATURE SCHOOL"
+    },
+    {
+        "name": "KYILLA PRIMARY SCHOOL"
+    },
+    {
+        "name": "LA GRANGE REMOTE COMMUNITY SCHOOL"
+    },
+    {
+        "name": "LA SALLE COLLEGE"
+    },
+    {
+        "name": "LAKE GRACE DISTRICT HIGH SCHOOL"
+    },
+    {
+        "name": "LAKE GWELUP PRIMARY SCHOOL"
+    },
+    {
+        "name": "LAKE JOONDALUP BAPTIST COLLEGE"
+    },
+    {
+        "name": "LAKE KING PRIMARY SCHOOL"
+    },
+    {
+        "name": "LAKE MONGER PRIMARY SCHOOL"
+    },
+    {
+        "name": "LAKELAND SENIOR HIGH SCHOOL"
+    },
+    {
+        "name": "LAKELANDS PRIMARY SCHOOL"
+    },
+    {
+        "name": "LANCE HOLT SCHOOL"
+    },
+    {
+        "name": "LANCELIN PRIMARY SCHOOL"
+    },
+    {
+        "name": "LANDSDALE CHRISTIAN SCHOOL"
+    },
+    {
+        "name": "LANDSDALE GARDENS PRIMARY SCHOOL"
+    },
+    {
+        "name": "LANDSDALE PRIMARY SCHOOL"
+    },
+    {
+        "name": "LATHLAIN PRIMARY SCHOOL"
+    },
+    {
+        "name": "LAVERTON SCHOOL"
+    },
+    {
+        "name": "LEANING TREE STEINER SCHOOL"
+    },
+    {
+        "name": "LEDA EDUCATION SUPPORT CENTRE"
+    },
+    {
+        "name": "LEDA PRIMARY SCHOOL"
+    },
+    {
+        "name": "LEEMAN PRIMARY SCHOOL"
+    },
+    {
+        "name": "LEEMING PRIMARY SCHOOL"
+    },
+    {
+        "name": "LEEMING SENIOR HIGH SCHOOL"
+    },
+    {
+        "name": "LEEMING SENIOR HIGH SCHOOL EDUCATION SUPPORT CENTRE"
+    },
+    {
+        "name": "LEINSTER COMMUNITY SCHOOL"
+    },
+    {
+        "name": "LEONORA DISTRICT HIGH SCHOOL"
+    },
+    {
+        "name": "LESCHENAULT CATHOLIC PRIMARY SCHOOL"
+    },
+    {
+        "name": "LESMURDIE PRIMARY SCHOOL"
+    },
+    {
+        "name": "LESMURDIE SENIOR HIGH SCHOOL"
+    },
+    {
+        "name": "LITTLE GROVE PRIMARY SCHOOL"
+    },
+    {
+        "name": "LIVING WATERS LUTHERAN COLLEGE"
+    },
+    {
+        "name": "LIWARA CATHOLIC PRIMARY SCHOOL"
+    },
+    {
+        "name": "LOCKRIDGE PRIMARY SCHOOL"
+    },
+    {
+        "name": "LOCKYER COMMUNITY KINDERGARTEN"
+    },
+    {
+        "name": "LOOMA REMOTE COMMUNITY SCHOOL"
+    },
+    {
+        "name": "LOWER KING COMMUNITY KINDERGARTEN"
+    },
+    {
+        "name": "LUMEN CHRISTI COLLEGE"
+    },
+    {
+        "name": "LUURNPA CATHOLIC SCHOOL"
+    },
+    {
+        "name": "LYNWOOD SENIOR HIGH SCHOOL"
+    },
+    {
+        "name": "MAARAKOOL PRIMARY SCHOOL"
+    },
+    {
+        "name": "MADDINGTON EDUCATION SUPPORT CENTRE"
+    },
+    {
+        "name": "MADDINGTON PRIMARY SCHOOL"
+    },
+    {
+        "name": "MADELEY PRIMARY SCHOOL"
+    },
+    {
+        "name": "MADORA BAY PRIMARY SCHOOL"
+    },
+    {
+        "name": "MAIDA VALE PRIMARY SCHOOL"
+    },
+    {
+        "name": "MAIDENS PARK PRIMARY SCHOOL"
+    },
+    {
+        "name": "MAJELLA CATHOLIC PRIMARY SCHOOL"
+    },
+    {
+        "name": "MAKYBE RISE PRIMARY SCHOOL"
+    },
+    {
+        "name": "MALIBU SCHOOL"
+    },
+    {
+        "name": "MALVERN SPRINGS PRIMARY SCHOOL"
+    },
+    {
+        "name": "MANDURAH BAPTIST COLLEGE"
+    },
+    {
+        "name": "MANDURAH CATHOLIC COLLEGE"
+    },
+    {
+        "name": "MANDURAH PRIMARY SCHOOL"
+    },
+    {
+        "name": "MANEA SENIOR COLLEGE"
+    },
+    {
+        "name": "MANJALI STUDIO SCHOOL"
+    },
+    {
+        "name": "MANJIMUP EDUCATION SUPPORT CENTRE"
+    },
+    {
+        "name": "MANJIMUP PRIMARY SCHOOL"
+    },
+    {
+        "name": "MANJIMUP SENIOR HIGH SCHOOL"
+    },
+    {
+        "name": "MANNING PRIMARY SCHOOL"
+    },
+    {
+        "name": "MARANGAROO PRIMARY SCHOOL"
+    },
+    {
+        "name": "MARBLE BAR PRIMARY SCHOOL"
+    },
+    {
+        "name": "MARGARET RIVER INDEPENDENT SCHOOL"
+    },
+    {
+        "name": "MARGARET RIVER MONTESSORI SCHOOL"
+    },
+    {
+        "name": "MARGARET RIVER PRIMARY SCHOOL"
+    },
+    {
+        "name": "MARGARET RIVER SENIOR HIGH SCHOOL"
+    },
+    {
+        "name": "MARMION PRIMARY SCHOOL"
+    },
+    {
+        "name": "MARRI GROVE PRIMARY SCHOOL"
+    },
+    {
+        "name": "MARY MACKILLOP CATHOLIC COMMUNITY PRIMARY SCHOOL"
+    },
+    {
+        "name": "MARY'S MOUNT PRIMARY SCHOOL"
+    },
+    {
+        "name": "MATER CHRISTI CATHOLIC PRIMARY SCHOOL"
+    },
+    {
+        "name": "MATER DEI COLLEGE"
+    },
+    {
+        "name": "MATTHEW GIBNEY CATHOLIC PRIMARY SCHOOL"
+    },
+    {
+        "name": "MAYLANDS PENINSULA PRIMARY SCHOOL"
+    },
+    {
+        "name": "MAZENOD COLLEGE"
+    },
+    {
+        "name": "MCDOUGALL PARK COMMUNITY KINDERGARTEN INC"
+    },
+    {
+        "name": "MEADOW SPRINGS EDUCATION SUPPORT CENTRE"
+    },
+    {
+        "name": "MEADOW SPRINGS PRIMARY SCHOOL"
+    },
+    {
+        "name": "MECKERING PRIMARY SCHOOL"
+    },
+    {
+        "name": "MEDINA PRIMARY SCHOOL"
+    },
+    {
+        "name": "MEEKATHARRA DISTRICT HIGH SCHOOL"
+    },
+    {
+        "name": "MEEKATHARRA SCHOOL OF THE AIR"
+    },
+    {
+        "name": "MEL MARIA CATHOLIC PRIMARY SCHOOL"
+    },
+    {
+        "name": "MELVILLE PRIMARY SCHOOL"
+    },
+    {
+        "name": "MELVILLE SENIOR HIGH SCHOOL"
+    },
+    {
+        "name": "MENZIES COMMUNITY SCHOOL"
+    },
+    {
+        "name": "MERCEDES COLLEGE"
+    },
+    {
+        "name": "MERCY COLLEGE"
+    },
+    {
+        "name": "MERREDIN COLLEGE"
+    },
+    {
+        "name": "MERRIWA EDUCATION SUPPORT CENTRE"
+    },
+    {
+        "name": "MERRIWA PRIMARY SCHOOL"
+    },
+    {
+        "name": "METHODIST LADIES' COLLEGE"
+    },
+    {
+        "name": "MIDDLE SWAN PRIMARY SCHOOL"
+    },
+    {
+        "name": "MIDVALE PRIMARY SCHOOL"
+    },
+    {
+        "name": "MILING PRIMARY SCHOOL"
+    },
+    {
+        "name": "MILLARS WELL PRIMARY SCHOOL"
+    },
+    {
+        "name": "MILLEN PRIMARY SCHOOL"
+    },
+    {
+        "name": "MINDARIE PRIMARY SCHOOL"
+    },
+    {
+        "name": "MINDARIE SENIOR COLLEGE"
+    },
+    {
+        "name": "MINGENEW PRIMARY SCHOOL"
+    },
+    {
+        "name": "MOERLINA SCHOOL"
+    },
+    {
+        "name": "MOORA PRIMARY SCHOOL"
+    },
+    {
+        "name": "MOORDITJ NOONGAR COMMUNITY COLLEGE"
+    },
+    {
+        "name": "MOORINE ROCK PRIMARY SCHOOL"
+    },
+    {
+        "name": "MORAWA DISTRICT HIGH SCHOOL"
+    },
+    {
+        "name": "MORLEY PRIMARY SCHOOL"
+    },
+    {
+        "name": "MORLEY SENIOR HIGH SCHOOL"
+    },
+    {
+        "name": "MOSMAN PARK PRIMARY SCHOOL"
+    },
+    {
+        "name": "MOSMAN PARK SCHOOL FOR DEAF CHILDREN"
+    },
+    {
+        "name": "MOTHER TERESA CATHOLIC COLLEGE"
+    },
+    {
+        "name": "MOTIVATION EDUCATION AND CAREER SCHOOL"
+    },
+    {
+        "name": "MOUNT BARKER COMMUNITY COLLEGE"
+    },
+    {
+        "name": "MOUNT CLAREMONT PRIMARY SCHOOL"
+    },
+    {
+        "name": "MOUNT HAWTHORN EDUCATION SUPPORT CENTRE"
+    },
+    {
+        "name": "MOUNT HAWTHORN PRIMARY SCHOOL"
+    },
+    {
+        "name": "MOUNT HELENA PRIMARY SCHOOL"
+    },
+    {
+        "name": "MOUNT LAWLEY PRIMARY SCHOOL"
+    },
+    {
+        "name": "MOUNT LAWLEY SENIOR HIGH SCHOOL"
+    },
+    {
+        "name": "MOUNT LOCKYER PRIMARY SCHOOL"
+    },
+    {
+        "name": "MOUNT MAGNET DISTRICT HIGH SCHOOL"
+    },
+    {
+        "name": "MOUNT MANYPEAKS PRIMARY SCHOOL"
+    },
+    {
+        "name": "MOUNT MARGARET REMOTE COMMUNITY SCHOOL"
+    },
+    {
+        "name": "MOUNT PLEASANT PRIMARY SCHOOL"
+    },
+    {
+        "name": "MOUNT TARCOOLA PRIMARY SCHOOL"
+    },
+    {
+        "name": "MUKINBUDIN DISTRICT HIGH SCHOOL"
+    },
+    {
+        "name": "MULLALOO BEACH PRIMARY SCHOOL"
+    },
+    {
+        "name": "MULLALOO COMMUNITY KINDERGARTEN"
+    },
+    {
+        "name": "MULLALOO HEIGHTS PRIMARY SCHOOL"
+    },
+    {
+        "name": "MULLEWA DISTRICT HIGH SCHOOL"
+    },
+    {
+        "name": "MULUDJA REMOTE COMMUNITY SCHOOL"
+    },
+    {
+        "name": "MUNDARING CHRISTIAN COLLEGE"
+    },
+    {
+        "name": "MUNDARING PRIMARY SCHOOL"
+    },
+    {
+        "name": "MUNDIJONG PRIMARY SCHOOL"
+    },
+    {
+        "name": "MUNGLINUP PRIMARY SCHOOL"
+    },
+    {
+        "name": "NAGLE CATHOLIC COLLEGE"
+    },
+    {
+        "name": "NANNUP DISTRICT HIGH SCHOOL"
+    },
+    {
+        "name": "NAREMBEEN DISTRICT HIGH SCHOOL"
+    },
+    {
+        "name": "NARROGIN PRIMARY SCHOOL"
+    },
+    {
+        "name": "NARROGIN SENIOR HIGH SCHOOL"
+    },
+    {
+        "name": "NEDLANDS PRIMARY SCHOOL"
+    },
+    {
+        "name": "NEERIGEN BROOK PRIMARY SCHOOL"
+    },
+    {
+        "name": "NEWBOROUGH PRIMARY SCHOOL"
+    },
+    {
+        "name": "NEWDEGATE PRIMARY SCHOOL"
+    },
+    {
+        "name": "NEWMAN COLLEGE"
+    },
+    {
+        "name": "NEWMAN PRIMARY SCHOOL"
+    },
+    {
+        "name": "NEWMAN SENIOR HIGH SCHOOL"
+    },
+    {
+        "name": "NEWTON MOORE EDUCATION SUPPORT CENTRE"
+    },
+    {
+        "name": "NEWTON MOORE SENIOR HIGH SCHOOL"
+    },
+    {
+        "name": "NEWTON PRIMARY SCHOOL"
+    },
+    {
+        "name": "NGAANYATJARRA LANDS SCHOOL"
+    },
+    {
+        "name": "NGALANGANGPUM SCHOOL"
+    },
+    {
+        "name": "NGALAPITA REMOTE COMMUNITY SCHOOL"
+    },
+    {
+        "name": "NOLLAMARA PRIMARY SCHOOL"
+    },
+    {
+        "name": "NORANDA PRIMARY SCHOOL"
+    },
+    {
+        "name": "NORSEMAN DISTRICT HIGH SCHOOL"
+    },
+    {
+        "name": "NORTH ALBANY SENIOR HIGH SCHOOL"
+    },
+    {
+        "name": "NORTH BALGA PRIMARY SCHOOL"
+    },
+    {
+        "name": "NORTH BEACH PRIMARY SCHOOL"
+    },
+    {
+        "name": "NORTH COTTESLOE PRIMARY SCHOOL"
+    },
+    {
+        "name": "NORTH DANDALUP PRIMARY SCHOOL"
+    },
+    {
+        "name": "NORTH EAST METROPOLITAN LANGUAGE DEVELOPMENT CENTRE"
+    },
+    {
+        "name": "NORTH FREMANTLE PRIMARY SCHOOL"
+    },
+    {
+        "name": "NORTH HARRISDALE PRIMARY SCHOOL"
+    },
+    {
+        "name": "NORTH KALGOORLIE PRIMARY SCHOOL"
+    },
+    {
+        "name": "NORTH LAKE SENIOR CAMPUS"
+    },
+    {
+        "name": "NORTH MANDURAH PRIMARY SCHOOL"
+    },
+    {
+        "name": "NORTH MORLEY PRIMARY SCHOOL"
+    },
+    {
+        "name": "NORTH PARMELIA PRIMARY SCHOOL"
+    },
+    {
+        "name": "NORTH PERTH PRIMARY SCHOOL"
+    },
+    {
+        "name": "NORTH TOM PRICE PRIMARY SCHOOL"
+    },
+    {
+        "name": "NORTH WOODVALE PRIMARY SCHOOL"
+    },
+    {
+        "name": "NORTHAM PRIMARY SCHOOL"
+    },
+    {
+        "name": "NORTHAM SENIOR HIGH SCHOOL"
+    },
+    {
+        "name": "NORTHAMPTON DISTRICT HIGH SCHOOL"
+    },
+    {
+        "name": "NORTHCLIFFE DISTRICT HIGH SCHOOL"
+    },
+    {
+        "name": "NORTHSHORE CHRISTIAN GRAMMAR SCHOOL"
+    },
+    {
+        "name": "NOTRE DAME CATHOLIC PRIMARY SCHOOL"
+    },
+    {
+        "name": "NULLAGINE PRIMARY SCHOOL"
+    },
+    {
+        "name": "NULSEN PRIMARY SCHOOL"
+    },
+    {
+        "name": "NUNGARIN PRIMARY SCHOOL"
+    },
+    {
+        "name": "NYABING PRIMARY SCHOOL"
+    },
+    {
+        "name": "NYIKINA MANGALA COMMUNITY SCHOOL"
+    },
+    {
+        "name": "O'CONNOR EDUCATION SUPPORT CENTRE"
+    },
+    {
+        "name": "O'CONNOR PRIMARY SCHOOL"
+    },
+    {
+        "name": "OAKWOOD PRIMARY SCHOOL"
+    },
+    {
+        "name": "OBERTHUR PRIMARY SCHOOL"
+    },
+    {
+        "name": "OCEAN REEF PRIMARY SCHOOL"
+    },
+    {
+        "name": "OCEAN REEF SENIOR HIGH SCHOOL"
+    },
+    {
+        "name": "OCEAN ROAD PRIMARY SCHOOL"
+    },
+    {
+        "name": "ONE ARM POINT REMOTE COMMUNITY SCHOOL"
+    },
+    {
+        "name": "ONESCHOOL GLOBAL WA"
+    },
+    {
+        "name": "ONGERUP PRIMARY SCHOOL"
+    },
+    {
+        "name": "ONSLOW SCHOOL"
+    },
+    {
+        "name": "ORANA CATHOLIC PRIMARY SCHOOL"
+    },
+    {
+        "name": "ORANGE GROVE PRIMARY SCHOOL"
+    },
+    {
+        "name": "ORELIA PRIMARY SCHOOL"
+    },
+    {
+        "name": "OSBORNE PRIMARY SCHOOL"
+    },
+    {
+        "name": "OUR LADY OF FATIMA SCHOOL"
+    },
+    {
+        "name": "OUR LADY OF GOOD COUNSEL SCHOOL"
+    },
+    {
+        "name": "OUR LADY OF GRACE SCHOOL"
+    },
+    {
+        "name": "OUR LADY OF LOURDES SCHOOL"
+    },
+    {
+        "name": "OUR LADY OF LOURDES SCHOOL"
+    },
+    {
+        "name": "OUR LADY OF MERCY COLLEGE"
+    },
+    {
+        "name": "OUR LADY OF MERCY PRIMARY SCHOOL"
+    },
+    {
+        "name": "OUR LADY OF MOUNT CARMEL SCHOOL"
+    },
+    {
+        "name": "OUR LADY OF MOUNT CARMEL SCHOOL"
+    },
+    {
+        "name": "OUR LADY OF THE CAPE PRIMARY SCHOOL"
+    },
+    {
+        "name": "OUR LADY STAR OF THE SEA CATHOLIC PRIMARY SCHOOL"
+    },
+    {
+        "name": "OUR LADY'S ASSUMPTION SCHOOL"
+    },
+    {
+        "name": "PADBURY CATHOLIC PRIMARY SCHOOL"
+    },
+    {
+        "name": "PADBURY COMMUNITY KINDERGARTEN"
+    },
+    {
+        "name": "PADBURY PRIMARY SCHOOL"
+    },
+    {
+        "name": "PALMYRA PRIMARY SCHOOL"
+    },
+    {
+        "name": "PANNAWONICA SCHOOL"
+    },
+    {
+        "name": "PARABURDOO PRIMARY SCHOOL"
+    },
+    {
+        "name": "PARKERVILLE PRIMARY SCHOOL"
+    },
+    {
+        "name": "PARKFIELD PRIMARY SCHOOL"
+    },
+    {
+        "name": "PARKLANDS SCHOOL"
+    },
+    {
+        "name": "PARKWOOD PRIMARY SCHOOL"
+    },
+    {
+        "name": "PARNNGURR COMMUNITY SCHOOL"
+    },
+    {
+        "name": "PEARSALL PRIMARY SCHOOL"
+    },
+    {
+        "name": "PEEL LANGUAGE DEVELOPMENT SCHOOL"
+    },
+    {
+        "name": "PEGS CREEK PRIMARY SCHOOL"
+    },
+    {
+        "name": "PEMBERTON DISTRICT HIGH SCHOOL"
+    },
+    {
+        "name": "PENRHOS COLLEGE"
+    },
+    {
+        "name": "PERENJORI PRIMARY SCHOOL"
+    },
+    {
+        "name": "PERTH COLLEGE"
+    },
+    {
+        "name": "PERTH MODERN SCHOOL"
+    },
+    {
+        "name": "PERTH MONTESSORI SCHOOL"
+    },
+    {
+        "name": "PERTH WALDORF SCHOOL"
+    },
+    {
+        "name": "PETER CARNLEY ANGLICAN COMMUNITY SCHOOL"
+    },
+    {
+        "name": "PETER MOYES ANGLICAN COMMUNITY SCHOOL"
+    },
+    {
+        "name": "PHOENIX PRIMARY SCHOOL"
+    },
+    {
+        "name": "PIA WADJARRI REMOTE COMMUNITY SCHOOL"
+    },
+    {
+        "name": "PIARA WATERS PRIMARY SCHOOL"
+    },
+    {
+        "name": "PIARA WATERS SENIOR HIGH SCHOOL"
+    },
+    {
+        "name": "PICKERING BROOK PRIMARY SCHOOL"
+    },
+    {
+        "name": "PICTON PRIMARY SCHOOL"
+    },
+    {
+        "name": "PINE VIEW PRIMARY SCHOOL"
+    },
+    {
+        "name": "PINEVIEW COMMUNITY KINDERGARTEN"
+    },
+    {
+        "name": "PINGELLY PRIMARY SCHOOL"
+    },
+    {
+        "name": "PINGRUP PRIMARY SCHOOL"
+    },
+    {
+        "name": "PINJARRA PRIMARY SCHOOL"
+    },
+    {
+        "name": "PINJARRA SENIOR HIGH SCHOOL"
+    },
+    {
+        "name": "PIONEER VILLAGE SCHOOL"
+    },
+    {
+        "name": "PORT HEDLAND PRIMARY SCHOOL"
+    },
+    {
+        "name": "PORT HEDLAND SCHOOL OF THE AIR"
+    },
+    {
+        "name": "PORT KENNEDY PRIMARY SCHOOL"
+    },
+    {
+        "name": "PORT SCHOOL"
+    },
+    {
+        "name": "POSEIDON PRIMARY SCHOOL"
+    },
+    {
+        "name": "POYNTER PRIMARY SCHOOL"
+    },
+    {
+        "name": "PRENDIVILLE CATHOLIC COLLEGE"
+    },
+    {
+        "name": "PRESBYTERIAN LADIES COLLEGE"
+    },
+    {
+        "name": "PROVIDENCE CHRISTIAN COLLEGE"
+    },
+    {
+        "name": "PURNULULU ABORIGINAL INDEPENDENT COMMUNITY SCHOOL"
+    },
+    {
+        "name": "QUAIRADING DISTRICT HIGH SCHOOL"
+    },
+    {
+        "name": "QUEEN OF APOSTLES SCHOOL"
+    },
+    {
+        "name": "QUEENS PARK PRIMARY SCHOOL"
+    },
+    {
+        "name": "QUINNS BAPTIST COLLEGE"
+    },
+    {
+        "name": "QUINNS BEACH PRIMARY SCHOOL"
+    },
+    {
+        "name": "QUINNS ROCKS PRIMARY SCHOOL"
+    },
+    {
+        "name": "QUINTILIAN SCHOOL"
+    },
+    {
+        "name": "RANFORD PRIMARY SCHOOL"
+    },
+    {
+        "name": "RANGEWAY PRIMARY SCHOOL"
+    },
+    {
+        "name": "RAPIDS LANDING PRIMARY SCHOOL"
+    },
+    {
+        "name": "RAVENSTHORPE DISTRICT HIGH SCHOOL"
+    },
+    {
+        "name": "RAWA COMMUNITY SCHOOL"
+    },
+    {
+        "name": "RAWLINSON PRIMARY SCHOOL"
+    },
+    {
+        "name": "REDCLIFFE PRIMARY SCHOOL"
+    },
+    {
+        "name": "REGENT COLLEGE"
+    },
+    {
+        "name": "REHOBOTH CHRISTIAN COLLEGE"
+    },
+    {
+        "name": "RICHMOND PRIMARY SCHOOL"
+    },
+    {
+        "name": "RIDGE VIEW SECONDARY COLLEGE"
+    },
+    {
+        "name": "RIVA PRIMARY SCHOOL"
+    },
+    {
+        "name": "RIVER VALLEY PRIMARY SCHOOL"
+    },
+    {
+        "name": "RIVERGUMS PRIMARY SCHOOL"
+    },
+    {
+        "name": "RIVERSIDE EDUCATION SUPPORT CENTRE"
+    },
+    {
+        "name": "RIVERSIDE PRIMARY SCHOOL"
+    },
+    {
+        "name": "RIVERTON EDUCATION SUPPORT CENTRE"
+    },
+    {
+        "name": "RIVERTON PRIMARY SCHOOL"
+    },
+    {
+        "name": "RIVERVALE PRIMARY SCHOOL"
+    },
+    {
+        "name": "ROCKINGHAM BEACH EDUCATION SUPPORT CENTRE"
+    },
+    {
+        "name": "ROCKINGHAM BEACH PRIMARY SCHOOL"
+    },
+    {
+        "name": "ROCKINGHAM JOHN CALVIN SCHOOL"
+    },
+    {
+        "name": "ROCKINGHAM LAKES PRIMARY SCHOOL"
+    },
+    {
+        "name": "ROCKINGHAM MONTESSORI SCHOOL"
+    },
+    {
+        "name": "ROCKINGHAM SENIOR HIGH SCHOOL"
+    },
+    {
+        "name": "ROCKINGHAM SENIOR HIGH SCHOOL EDUCATION SUPPORT CENTRE"
+    },
+    {
+        "name": "ROEBOURNE DISTRICT HIGH SCHOOL"
+    },
+    {
+        "name": "ROEBUCK PRIMARY SCHOOL"
+    },
+    {
+        "name": "ROLEYSTONE COMMUNITY COLLEGE"
+    },
+    {
+        "name": "ROSALIE PRIMARY SCHOOL"
+    },
+    {
+        "name": "ROSEWORTH EDUCATION SUPPORT CENTRE"
+    },
+    {
+        "name": "ROSEWORTH PRIMARY SCHOOL"
+    },
+    {
+        "name": "ROSSMOYNE COMMUNITY KINDERGARTEN"
+    },
+    {
+        "name": "ROSSMOYNE PRIMARY SCHOOL"
+    },
+    {
+        "name": "ROSSMOYNE SENIOR HIGH SCHOOL"
+    },
+    {
+        "name": "ROSTRATA PRIMARY SCHOOL"
+    },
+    {
+        "name": "SACRED HEART CATHOLIC SCHOOL"
+    },
+    {
+        "name": "SACRED HEART COLLEGE"
+    },
+    {
+        "name": "SACRED HEART PRIMARY SCHOOL"
+    },
+    {
+        "name": "SACRED HEART PRIMARY SCHOOL"
+    },
+    {
+        "name": "SACRED HEART SCHOOL"
+    },
+    {
+        "name": "SACRED HEART SCHOOL"
+    },
+    {
+        "name": "SAFETY BAY PRIMARY SCHOOL"
+    },
+    {
+        "name": "SAFETY BAY SENIOR HIGH SCHOOL"
+    },
+    {
+        "name": "SALMON GUMS PRIMARY SCHOOL"
+    },
+    {
+        "name": "SALVADO CATHOLIC COLLEGE"
+    },
+    {
+        "name": "SAMSON PRIMARY SCHOOL"
+    },
+    {
+        "name": "SANTA CLARA SCHOOL"
+    },
+    {
+        "name": "SANTA MARIA COLLEGE"
+    },
+    {
+        "name": "SAWYERS VALLEY PRIMARY SCHOOL"
+    },
+    {
+        "name": "SCADDAN PRIMARY SCHOOL"
+    },
+    {
+        "name": "SCARBOROUGH PRIMARY SCHOOL"
+    },
+    {
+        "name": "SCHOOL OF ISOLATED AND DISTANCE EDUCATION"
+    },
+    {
+        "name": "SCHOOL OF SPECIAL EDUCATIONAL NEEDS: BEHAVIOUR AND ENGAGEMENT"
+    },
+    {
+        "name": "SCHOOL OF SPECIAL EDUCATIONAL NEEDS: SENSORY"
+    },
+    {
+        "name": "SCOTCH COLLEGE"
+    },
+    {
+        "name": "SEAFORTH PRIMARY SCHOOL"
+    },
+    {
+        "name": "SEAVIEW COMMUNITY KINDERGARTEN"
+    },
+    {
+        "name": "SECRET HARBOUR PRIMARY SCHOOL"
+    },
+    {
+        "name": "SEDA COLLEGE WA"
+    },
+    {
+        "name": "SERPENTINE PRIMARY SCHOOL"
+    },
+    {
+        "name": "SERVITE COLLEGE"
+    },
+    {
+        "name": "SETON CATHOLIC COLLEGE"
+    },
+    {
+        "name": "SETTLERS PRIMARY SCHOOL"
+    },
+    {
+        "name": "SEVENOAKS SENIOR COLLEGE"
+    },
+    {
+        "name": "SHARK BAY SCHOOL"
+    },
+    {
+        "name": "SHELLEY PRIMARY SCHOOL"
+    },
+    {
+        "name": "SHENTON COLLEGE"
+    },
+    {
+        "name": "SHENTON COLLEGE DEAF EDUCATION CENTRE"
+    },
+    {
+        "name": "SHEOAK GROVE PRIMARY SCHOOL"
+    },
+    {
+        "name": "SHOREHAVEN PRIMARY SCHOOL"
+    },
+    {
+        "name": "SINGLETON PRIMARY SCHOOL"
+    },
+    {
+        "name": "SIR DAVID BRAND SCHOOL"
+    },
+    {
+        "name": "SMYL COMMUNITY COLLEGE"
+    },
+    {
+        "name": "SOMERLY PRIMARY SCHOOL"
+    },
+    {
+        "name": "SORRENTO PRIMARY SCHOOL"
+    },
+    {
+        "name": "SOUTH BALLAJURA EDUCATION SUPPORT CENTRE"
+    },
+    {
+        "name": "SOUTH BALLAJURA PRIMARY SCHOOL"
+    },
+    {
+        "name": "SOUTH BUNBURY EDUCATION SUPPORT CENTRE"
+    },
+    {
+        "name": "SOUTH BUNBURY PRIMARY SCHOOL"
+    },
+    {
+        "name": "SOUTH COAST BAPTIST COLLEGE"
+    },
+    {
+        "name": "SOUTH COOGEE PRIMARY SCHOOL"
+    },
+    {
+        "name": "SOUTH EAST LANGUAGE DEVELOPMENT CENTRE"
+    },
+    {
+        "name": "SOUTH HALLS HEAD PRIMARY SCHOOL"
+    },
+    {
+        "name": "SOUTH HEDLAND PRIMARY SCHOOL"
+    },
+    {
+        "name": "SOUTH KALGOORLIE PRIMARY SCHOOL"
+    },
+    {
+        "name": "SOUTH LAKE PRIMARY SCHOOL"
+    },
+    {
+        "name": "SOUTH NEWMAN PRIMARY SCHOOL"
+    },
+    {
+        "name": "SOUTH PADBURY PRIMARY SCHOOL"
+    },
+    {
+        "name": "SOUTH PERTH PRIMARY SCHOOL"
+    },
+    {
+        "name": "SOUTH STIRLING PRIMARY SCHOOL"
+    },
+    {
+        "name": "SOUTH THORNLIE PRIMARY SCHOOL"
+    },
+    {
+        "name": "SOUTH WEST COMMUNITY COLLEGE"
+    },
+    {
+        "name": "SOUTH WEST JOHN CALVIN CHRISTIAN COLLEGE"
+    },
+    {
+        "name": "SOUTHERN CROSS DISTRICT HIGH SCHOOL"
+    },
+    {
+        "name": "SOUTHERN GROVE PRIMARY SCHOOL"
+    },
+    {
+        "name": "SOUTHERN HILLS CHRISTIAN COLLEGE"
+    },
+    {
+        "name": "SOUTHERN RIVER COLLEGE"
+    },
+    {
+        "name": "SOUTHWELL PRIMARY SCHOOL"
+    },
+    {
+        "name": "SOWILO COMMUNITY HIGH SCHOOL"
+    },
+    {
+        "name": "SPEARWOOD ALTERNATIVE SCHOOL"
+    },
+    {
+        "name": "SPEARWOOD PRIMARY SCHOOL"
+    },
+    {
+        "name": "SPENCER PARK EDUCATION SUPPORT CENTRE"
+    },
+    {
+        "name": "SPENCER PARK PRIMARY SCHOOL"
+    },
+    {
+        "name": "SPRING HILL PRIMARY SCHOOL"
+    },
+    {
+        "name": "SPRING ROAD COMMUNITY KINDERGARTEN (INC)"
+    },
+    {
+        "name": "SPRINGFIELD PRIMARY SCHOOL"
+    },
+    {
+        "name": "ST ANDREW'S CATHOLIC PRIMARY SCHOOL"
+    },
+    {
+        "name": "ST ANDREW'S GRAMMAR"
+    },
+    {
+        "name": "ST ANNE'S SCHOOL"
+    },
+    {
+        "name": "ST ANTHONY'S SCHOOL"
+    },
+    {
+        "name": "ST ANTHONY'S SCHOOL"
+    },
+    {
+        "name": "ST AUGUSTINE'S PRIMARY SCHOOL"
+    },
+    {
+        "name": "ST BENEDICT'S SCHOOL"
+    },
+    {
+        "name": "ST BERNADETTE'S CATHOLIC PRIMARY SCHOOL"
+    },
+    {
+        "name": "ST BERNARD'S SCHOOL"
+    },
+    {
+        "name": "ST BRIGID'S COLLEGE"
+    },
+    {
+        "name": "ST BRIGID'S PRIMARY SCHOOL"
+    },
+    {
+        "name": "ST BRIGID'S SCHOOL"
+    },
+    {
+        "name": "ST BRIGID'S SCHOOL"
+    },
+    {
+        "name": "ST CECILIA'S CATHOLIC PRIMARY SCHOOL"
+    },
+    {
+        "name": "ST CLARE'S SCHOOL"
+    },
+    {
+        "name": "ST COLUMBA'S CATHOLIC PRIMARY SCHOOL"
+    },
+    {
+        "name": "ST COLUMBA'S SCHOOL"
+    },
+    {
+        "name": "ST DAMIEN'S CATHOLIC PRIMARY SCHOOL"
+    },
+    {
+        "name": "ST DENIS SCHOOL"
+    },
+    {
+        "name": "ST DOMINIC'S SCHOOL"
+    },
+    {
+        "name": "ST ELIZABETH'S CATHOLIC PRIMARY SCHOOL"
+    },
+    {
+        "name": "ST EMILIE'S CATHOLIC PRIMARY SCHOOL"
+    },
+    {
+        "name": "ST FRANCIS OF ASSISI CATHOLIC PRIMARY SCHOOL"
+    },
+    {
+        "name": "ST FRANCIS XAVIER PRIMARY SCHOOL"
+    },
+    {
+        "name": "ST FRANCIS' SCHOOL"
+    },
+    {
+        "name": "ST GEORGE'S ANGLICAN GRAMMAR SCHOOL"
+    },
+    {
+        "name": "ST GERARD'S CATHOLIC PRIMARY SCHOOL"
+    },
+    {
+        "name": "ST HELENA'S CATHOLIC PRIMARY SCHOOL"
+    },
+    {
+        "name": "ST HILDA'S ANGLICAN SCHOOL FOR GIRLS"
+    },
+    {
+        "name": "ST JAMES' ANGLICAN SCHOOL"
+    },
+    {
+        "name": "ST JEROME'S PRIMARY SCHOOL"
+    },
+    {
+        "name": "ST JOHN BOSCO COLLEGE"
+    },
+    {
+        "name": "ST JOHN PAUL II CATHOLIC PRIMARY SCHOOL"
+    },
+    {
+        "name": "ST JOHN'S SCHOOL"
+    },
+    {
+        "name": "ST JOHN'S SCHOOL"
+    },
+    {
+        "name": "ST JOSEPH'S CATHOLIC PRIMARY SCHOOL"
+    },
+    {
+        "name": "ST JOSEPH'S COLLEGE"
+    },
+    {
+        "name": "ST JOSEPH'S PRIMARY SCHOOL"
+    },
+    {
+        "name": "ST JOSEPH'S SCHOOL"
+    },
+    {
+        "name": "ST JOSEPH'S SCHOOL"
+    },
+    {
+        "name": "ST JOSEPH'S SCHOOL"
+    },
+    {
+        "name": "ST JOSEPH'S SCHOOL"
+    },
+    {
+        "name": "ST JOSEPH'S SCHOOL"
+    },
+    {
+        "name": "ST JOSEPH'S SCHOOL"
+    },
+    {
+        "name": "ST JOSEPH'S SCHOOL"
+    },
+    {
+        "name": "ST JOSEPH'S SCHOOL"
+    },
+    {
+        "name": "ST JOSEPH'S SCHOOL"
+    },
+    {
+        "name": "ST JUDE'S CATHOLIC SCHOOL"
+    },
+    {
+        "name": "ST KIERAN CATHOLIC PRIMARY SCHOOL"
+    },
+    {
+        "name": "ST LAWRENCE PRIMARY SCHOOL"
+    },
+    {
+        "name": "ST LAWRENCE'S PRIMARY SCHOOL"
+    },
+    {
+        "name": "ST LUKE'S CATHOLIC PRIMARY SCHOOL"
+    },
+    {
+        "name": "ST LUKE'S COLLEGE"
+    },
+    {
+        "name": "ST MARCELLIN CATHOLIC COLLEGE"
+    },
+    {
+        "name": "ST MARIA GORETTI'S CATHOLIC SCHOOL"
+    },
+    {
+        "name": "ST MARK'S ANGLICAN COMMUNITY SCHOOL"
+    },
+    {
+        "name": "ST MARTIN DE PORRES SCHOOL"
+    },
+    {
+        "name": "ST MARY MACKILLOP COLLEGE"
+    },
+    {
+        "name": "ST MARY STAR OF THE SEA COLLEGE"
+    },
+    {
+        "name": "ST MARY'S ANGLICAN GIRLS' SCHOOL"
+    },
+    {
+        "name": "ST MARY'S CATHOLIC PRIMARY SCHOOL"
+    },
+    {
+        "name": "ST MARY'S CATHOLIC SCHOOL"
+    },
+    {
+        "name": "ST MARY'S COLLEGE"
+    },
+    {
+        "name": "ST MARY'S PRIMARY SCHOOL"
+    },
+    {
+        "name": "ST MARY'S SCHOOL"
+    },
+    {
+        "name": "ST MARY'S SCHOOL"
+    },
+    {
+        "name": "ST MARY'S SCHOOL"
+    },
+    {
+        "name": "ST MATTHEW'S SCHOOL"
+    },
+    {
+        "name": "ST MICHAEL'S CATHOLIC PRIMARY SCHOOL"
+    },
+    {
+        "name": "ST MICHAEL'S SCHOOL"
+    },
+    {
+        "name": "ST MUNCHIN'S CATHOLIC SCHOOL"
+    },
+    {
+        "name": "ST NORBERT COLLEGE"
+    },
+    {
+        "name": "ST PATRICK'S PRIMARY SCHOOL"
+    },
+    {
+        "name": "ST PATRICK'S SCHOOL"
+    },
+    {
+        "name": "ST PAUL'S PRIMARY SCHOOL"
+    },
+    {
+        "name": "ST PAUL'S PRIMARY SCHOOL"
+    },
+    {
+        "name": "ST PETER'S PRIMARY SCHOOL"
+    },
+    {
+        "name": "ST PIUS X CATHOLIC SCHOOL"
+    },
+    {
+        "name": "ST SIMON PETER CATHOLIC PRIMARY SCHOOL"
+    },
+    {
+        "name": "ST STEPHEN'S SCHOOL"
+    },
+    {
+        "name": "ST THOMAS MORE CATHOLIC PRIMARY SCHOOL"
+    },
+    {
+        "name": "ST THOMAS' PRIMARY SCHOOL"
+    },
+    {
+        "name": "ST VINCENT'S SCHOOL"
+    },
+    {
+        "name": "STAR OF THE SEA PRIMARY SCHOOL"
+    },
+    {
+        "name": "STRELLEY COMMUNITY SCHOOL"
+    },
+    {
+        "name": "SUBIACO PRIMARY SCHOOL"
+    },
+    {
+        "name": "SUCCESS PRIMARY SCHOOL"
+    },
+    {
+        "name": "SUNRISE PRIMARY SCHOOL"
+    },
+    {
+        "name": "SUTHERLAND DIANELLA PRIMARY SCHOOL"
+    },
+    {
+        "name": "SWAN CHRISTIAN COLLEGE"
+    },
+    {
+        "name": "SWAN VALLEY ANGLICAN COMMUNITY SCHOOL"
+    },
+    {
+        "name": "SWAN VIEW PRIMARY SCHOOL"
+    },
+    {
+        "name": "SWAN VIEW SENIOR HIGH SCHOOL"
+    },
+    {
+        "name": "SWANBOURNE PRIMARY SCHOOL"
+    },
+    {
+        "name": "TAKARI PRIMARY SCHOOL"
+    },
+    {
+        "name": "TAMBELLUP PRIMARY SCHOOL"
+    },
+    {
+        "name": "TAMBREY PRIMARY SCHOOL"
+    },
+    {
+        "name": "TAMMIN PRIMARY SCHOOL"
+    },
+    {
+        "name": "TAPPING PRIMARY SCHOOL"
+    },
+    {
+        "name": "THE BEEHIVE MONTESSORI SCHOOL"
+    },
+    {
+        "name": "THE JAPANESE SCHOOL IN PERTH"
+    },
+    {
+        "name": "THE KING'S COLLEGE"
+    },
+    {
+        "name": "THE MONTESSORI SCHOOL"
+    },
+    {
+        "name": "THE SILVER TREE STEINER SCHOOL"
+    },
+    {
+        "name": "THORNLIE PRIMARY SCHOOL"
+    },
+    {
+        "name": "THORNLIE SENIOR HIGH SCHOOL"
+    },
+    {
+        "name": "THREE SPRINGS PRIMARY SCHOOL"
+    },
+    {
+        "name": "TJUNTJUNTJARA REMOTE COMMUNITY SCHOOL"
+    },
+    {
+        "name": "TOM PRICE PRIMARY SCHOOL"
+    },
+    {
+        "name": "TOM PRICE SENIOR HIGH SCHOOL"
+    },
+    {
+        "name": "TOODYAY DISTRICT HIGH SCHOOL"
+    },
+    {
+        "name": "TRANBY COLLEGE"
+    },
+    {
+        "name": "TRAYNING PRIMARY SCHOOL"
+    },
+    {
+        "name": "TREEBY PRIMARY SCHOOL"
+    },
+    {
+        "name": "TREENDALE PRIMARY SCHOOL"
+    },
+    {
+        "name": "TREETOPS MONTESSORI SCHOOL"
+    },
+    {
+        "name": "TRINITY COLLEGE"
+    },
+    {
+        "name": "TSH (TEACH, SPEAK, HEAR)"
+    },
+    {
+        "name": "TUART FOREST PRIMARY SCHOOL"
+    },
+    {
+        "name": "TUART HILL COMMUNITY KINDERGARTEN"
+    },
+    {
+        "name": "TUART HILL PRIMARY SCHOOL"
+    },
+    {
+        "name": "TUART RISE PRIMARY SCHOOL"
+    },
+    {
+        "name": "TWO ROCKS PRIMARY SCHOOL"
+    },
+    {
+        "name": "UPPER SWAN PRIMARY SCHOOL"
+    },
+    {
+        "name": "URSULA FRAYNE CATHOLIC COLLEGE"
+    },
+    {
+        "name": "USELESS LOOP PRIMARY SCHOOL"
+    },
+    {
+        "name": "VASSE PRIMARY SCHOOL"
+    },
+    {
+        "name": "VICTORIA PARK CHRISTIAN SCHOOL"
+    },
+    {
+        "name": "VICTORIA PARK PRIMARY SCHOOL"
+    },
+    {
+        "name": "WADDINGTON PRIMARY SCHOOL"
+    },
+    {
+        "name": "WAGGRAKINE PRIMARY SCHOOL"
+    },
+    {
+        "name": "WAGIN DISTRICT HIGH SCHOOL"
+    },
+    {
+        "name": "WAIKIKI PRIMARY SCHOOL"
+    },
+    {
+        "name": "WALKAWAY PRIMARY SCHOOL"
+    },
+    {
+        "name": "WALLISTON PRIMARY SCHOOL"
+    },
+    {
+        "name": "WALPOLE PRIMARY SCHOOL"
+    },
+    {
+        "name": "WANANAMI REMOTE COMMUNITY SCHOOL"
+    },
+    {
+        "name": "WANDERING PRIMARY SCHOOL"
+    },
+    {
+        "name": "WANDINA PRIMARY SCHOOL"
+    },
+    {
+        "name": "WANGKATJUNGKA REMOTE COMMUNITY SCHOOL"
+    },
+    {
+        "name": "WANNEROO PRIMARY SCHOOL"
+    },
+    {
+        "name": "WANNEROO SECONDARY COLLEGE"
+    },
+    {
+        "name": "WARLAWURRU CATHOLIC SCHOOL"
+    },
+    {
+        "name": "WARNBRO COMMUNITY HIGH SCHOOL"
+    },
+    {
+        "name": "WARNBRO COMMUNITY HIGH SCHOOL EDUCATION SUPPORT CENTRE"
+    },
+    {
+        "name": "WARNBRO PRIMARY SCHOOL"
+    },
+    {
+        "name": "WAROONA DISTRICT HIGH SCHOOL"
+    },
+    {
+        "name": "WARRIAPENDI PRIMARY SCHOOL"
+    },
+    {
+        "name": "WARWICK SENIOR HIGH SCHOOL"
+    },
+    {
+        "name": "WATTLE GROVE PRIMARY SCHOOL"
+    },
+    {
+        "name": "WELD SQUARE PRIMARY SCHOOL"
+    },
+    {
+        "name": "WELLARD PRIMARY SCHOOL"
+    },
+    {
+        "name": "WELLARD VILLAGE PRIMARY SCHOOL"
+    },
+    {
+        "name": "WELLSTEAD PRIMARY SCHOOL"
+    },
+    {
+        "name": "WEMBLEY DOWNS PRIMARY SCHOOL"
+    },
+    {
+        "name": "WEMBLEY PRIMARY SCHOOL"
+    },
+    {
+        "name": "WESLEY COLLEGE"
+    },
+    {
+        "name": "WEST BALCATTA PRIMARY SCHOOL"
+    },
+    {
+        "name": "WEST BEECHBORO PRIMARY SCHOOL"
+    },
+    {
+        "name": "WEST BUSSELTON PRIMARY SCHOOL"
+    },
+    {
+        "name": "WEST BYFORD PRIMARY SCHOOL"
+    },
+    {
+        "name": "WEST COAST LANGUAGE DEVELOPMENT CENTRE"
+    },
+    {
+        "name": "WEST COAST SECONDARY EDUCATION SUPPORT CENTRE"
+    },
+    {
+        "name": "WEST COAST STEINER SCHOOL"
+    },
+    {
+        "name": "WEST GREENWOOD PRIMARY SCHOOL"
+    },
+    {
+        "name": "WEST LEEDERVILLE PRIMARY SCHOOL"
+    },
+    {
+        "name": "WEST LEEMING PRIMARY SCHOOL"
+    },
+    {
+        "name": "WEST MORLEY PRIMARY SCHOOL"
+    },
+    {
+        "name": "WEST NORTHAM PRIMARY SCHOOL"
+    },
+    {
+        "name": "WESTERN AUSTRALIAN COLLEGE OF AGRICULTURE - CUNDERDIN"
+    },
+    {
+        "name": "WESTERN AUSTRALIAN COLLEGE OF AGRICULTURE - DENMARK"
+    },
+    {
+        "name": "WESTERN AUSTRALIAN COLLEGE OF AGRICULTURE - HARVEY"
+    },
+    {
+        "name": "WESTERN AUSTRALIAN COLLEGE OF AGRICULTURE - MORAWA"
+    },
+    {
+        "name": "WESTERN AUSTRALIAN COLLEGE OF AGRICULTURE - NARROGIN"
+    },
+    {
+        "name": "WESTFIELD PARK PRIMARY SCHOOL"
+    },
+    {
+        "name": "WESTMINSTER EDUCATION SUPPORT CENTRE"
+    },
+    {
+        "name": "WESTMINSTER PRIMARY SCHOOL"
+    },
+    {
+        "name": "WHITE GUM VALLEY PRIMARY SCHOOL"
+    },
+    {
+        "name": "WHITFORD CATHOLIC PRIMARY SCHOOL"
+    },
+    {
+        "name": "WICKEPIN PRIMARY SCHOOL"
+    },
+    {
+        "name": "WICKHAM PRIMARY SCHOOL"
+    },
+    {
+        "name": "WILLANDRA PRIMARY SCHOOL"
+    },
+    {
+        "name": "WILLETTON PRIMARY SCHOOL"
+    },
+    {
+        "name": "WILLETTON SENIOR HIGH SCHOOL"
+    },
+    {
+        "name": "WILLIAMS PRIMARY SCHOOL"
+    },
+    {
+        "name": "WILSON PARK PRIMARY SCHOOL"
+    },
+    {
+        "name": "WILSON PRIMARY SCHOOL"
+    },
+    {
+        "name": "WILUNA REMOTE COMMUNITY SCHOOL"
+    },
+    {
+        "name": "WINTERFOLD PRIMARY SCHOOL"
+    },
+    {
+        "name": "WINTHROP PRIMARY SCHOOL"
+    },
+    {
+        "name": "WIRRABIRRA EDUCATION SUPPORT CENTRE"
+    },
+    {
+        "name": "WIRRABIRRA PRIMARY SCHOOL"
+    },
+    {
+        "name": "WONGAN HILLS DISTRICT HIGH SCHOOL"
+    },
+    {
+        "name": "WONGUTHA CHRISTIAN ABORIGINAL PARENT-DIRECTED SCHOOL"
+    },
+    {
+        "name": "WOODANILLING PRIMARY SCHOOL"
+    },
+    {
+        "name": "WOODBRIDGE PRIMARY SCHOOL"
+    },
+    {
+        "name": "WOODBURY BOSTON PRIMARY SCHOOL"
+    },
+    {
+        "name": "WOODLAND GROVE PRIMARY SCHOOL"
+    },
+    {
+        "name": "WOODLANDS PRIMARY SCHOOL"
+    },
+    {
+        "name": "WOODLUPINE PRIMARY SCHOOL"
+    },
+    {
+        "name": "WOODVALE PRIMARY SCHOOL"
+    },
+    {
+        "name": "WOODVALE SECONDARY COLLEGE"
+    },
+    {
+        "name": "WOOROLOO PRIMARY SCHOOL"
+    },
+    {
+        "name": "WULUNGARRA COMMUNITY SCHOOL"
+    },
+    {
+        "name": "WUNDOWIE PRIMARY SCHOOL"
+    },
+    {
+        "name": "WUNGONG PRIMARY SCHOOL"
+    },
+    {
+        "name": "WYALKATCHEM DISTRICT HIGH SCHOOL"
+    },
+    {
+        "name": "WYNDHAM DISTRICT HIGH SCHOOL"
+    },
+    {
+        "name": "XAVIER CATHOLIC SCHOOL"
+    },
+    {
+        "name": "Y SCHOOL WA"
+    },
+    {
+        "name": "YAKAMIA PRIMARY SCHOOL"
+    },
+    {
+        "name": "YAKANARRA COMMUNITY SCHOOL"
+    },
+    {
+        "name": "YALE PRIMARY SCHOOL"
+    },
+    {
+        "name": "YALGOO PRIMARY SCHOOL"
+    },
+    {
+        "name": "YALLINGUP STEINER SCHOOL"
+    },
+    {
+        "name": "YANCHEP BEACH PRIMARY SCHOOL"
+    },
+    {
+        "name": "YANCHEP LAGOON PRIMARY SCHOOL"
+    },
+    {
+        "name": "YANCHEP RISE PRIMARY SCHOOL"
+    },
+    {
+        "name": "YANCHEP SECONDARY COLLEGE"
+    },
+    {
+        "name": "YANDEYARRA REMOTE COMMUNITY SCHOOL"
+    },
+    {
+        "name": "YANGEBUP PRIMARY SCHOOL"
+    },
+    {
+        "name": "YARLOOP PRIMARY SCHOOL"
+    },
+    {
+        "name": "YARRALINKA PRIMARY SCHOOL"
+    },
+    {
+        "name": "YEALERING PRIMARY SCHOOL"
+    },
+    {
+        "name": "YERECOIN PRIMARY SCHOOL"
+    },
+    {
+        "name": "YIRAMALAY STUDIO SCHOOL"
+    },
+    {
+        "name": "YIYILI ABORIGINAL COMMUNITY SCHOOL"
+    },
+    {
+        "name": "YOKINE PRIMARY SCHOOL"
+    },
+    {
+        "name": "YORK DISTRICT HIGH SCHOOL"
+    },
+    {
+        "name": "YOUTH FUTURES COMMUNITY SCHOOL"
+    },
+    {
+        "name": "YULE BROOK COLLEGE"
+    },
+    {
+        "name": "YULGA JINNA REMOTE COMMUNITY SCHOOL"
+    },
+    {
+        "name": "YULUMA PRIMARY SCHOOL"
+    },
+    {
+        "name": "YUNA PRIMARY SCHOOL"
+    }
+]
