@@ -15,6 +15,25 @@ from planner_app.timetable import DAYS
 BASE_DIR = Path(__file__).resolve().parent
 FONTS_DIR = BASE_DIR / "fonts"
 
+# Earlier builds bundled demo / personal-use-only fonts. They were swapped for
+# freely licensed look-alikes, so map any saved choice onto its replacement.
+LEGACY_FONT_REPLACEMENTS = {
+    "Jraot": "Bungee",
+    "Jraot-Regular": "Bungee",
+    "Jraot Outline": "Bungee Outline",
+    "Jraot-Outline": "Bungee Outline",
+    "Jraot Hollow": "Bungee Shade",
+    "Jraot-Hollow": "Bungee Shade",
+    "Jraot Extrude": "Bungee Shade",
+    "Jraot-Extrude": "Bungee Shade",
+    "Restweek": "Allison",
+    "This Appeal": "Bebas Neue",
+    "This Appeal Free Demo": "Bebas Neue",
+    "ThisAppeal-FreeDemo": "Bebas Neue",
+    "Rocket": "Permanent Marker",
+    "Rocket Brush": "Permanent Marker",
+}
+
 # Older versions saved data.json next to the code, which is inside the app
 # bundle once packaged (read-only on Windows, wiped on every update).
 LEGACY_DATA_FILE = BASE_DIR / "data.json"
@@ -156,6 +175,7 @@ def load_data() -> Dict[str, Any]:
     settings = merged.get("settings", {})
     settings.pop("notification_windows", None)
     settings.pop("notification_mac", None)
+    replace_legacy_fonts(settings)
 
     timetable = merged.get("timetable")
 
@@ -167,6 +187,18 @@ def load_data() -> Dict[str, Any]:
             timetable.setdefault(day, [])
 
     return merged
+
+
+def replace_legacy_fonts(settings: Dict[str, Any]) -> None:
+    family = settings.get("font_family")
+    if family in LEGACY_FONT_REPLACEMENTS:
+        settings["font_family"] = LEGACY_FONT_REPLACEMENTS[family]
+
+    sections = settings.get("font_sections")
+    if isinstance(sections, dict):
+        for key, value in sections.items():
+            if value in LEGACY_FONT_REPLACEMENTS:
+                sections[key] = LEGACY_FONT_REPLACEMENTS[value]
 
 
 def save_data(data: Dict[str, Any]) -> None:
