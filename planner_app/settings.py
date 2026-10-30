@@ -74,6 +74,17 @@ def get_theme(settings: dict) -> dict:
     return PRESET_THEMES.get(current_theme, PRESET_THEMES["Apricot"]).copy()
 
 
+# Font file -> the family name Tk needs to use it. Licences are in fonts/licenses.
+BUNDLED_FONTS = {
+    "BebasNeue-Regular.ttf": "Bebas Neue",
+    "Allison-Regular.ttf": "Allison",
+    "PermanentMarker-Regular.ttf": "Permanent Marker",
+    "Bungee-Regular.ttf": "Bungee",
+    "BungeeOutline-Regular.ttf": "Bungee Outline",
+    "BungeeShade-Regular.ttf": "Bungee Shade",
+}
+
+
 def load_local_fonts() -> List[str]:
     loaded: List[str] = []
     font_files = list(Path(FONTS_DIR).glob("*.ttf")) + list(Path(FONTS_DIR).glob("*.otf"))
@@ -86,7 +97,7 @@ def load_local_fonts() -> List[str]:
         for font_file in font_files:
             result = add_font(str(font_file), fr_private, 0)
             if result > 0:
-                loaded.append(font_file.stem)
+                loaded.append(BUNDLED_FONTS.get(font_file.name, font_file.stem))
     return loaded
 
 
