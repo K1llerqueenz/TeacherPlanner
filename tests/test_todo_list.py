@@ -14,3 +14,22 @@ def test_add_update_toggle_and_cleanup():
 
     todo_list.update_task(data, 0, "")
     assert data["todos"] == []
+
+
+def test_update_task_changes_text():
+    data = {"todos": [{"text": "old", "completed": False}]}
+    todo_list.update_task(data, 0, "  new  ")
+    assert data["todos"] == [{"text": "new", "completed": False}]
+
+
+def test_out_of_range_index_is_ignored():
+    data = {"todos": [{"text": "a", "completed": False}]}
+    todo_list.update_task(data, 5, "x")
+    todo_list.toggle_task(data, -1)
+    assert data["todos"] == [{"text": "a", "completed": False}]
+
+
+def test_clear_all_tasks():
+    data = {"todos": [{"text": "a", "completed": False}, {"text": "b", "completed": True}]}
+    todo_list.clear_all_tasks(data)
+    assert data["todos"] == []

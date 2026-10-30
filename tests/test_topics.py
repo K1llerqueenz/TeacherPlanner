@@ -65,3 +65,31 @@ def test_friday_prompt_after_last_period():
     assert not topics.should_show_friday_prompt(
         datetime(2026, 10, 30, 15, 0), {"last_topic_prompt_date": "2026-10-30"}
     )
+
+
+def test_week_key_is_monday():
+    assert topics.get_week_key(datetime(2026, 10, 30).date()) == "2026-10-26"
+    assert topics.get_week_key(datetime(2026, 10, 26).date()) == "2026-10-26"
+    assert topics.get_week_key(datetime(2026, 11, 1).date()) == "2026-10-26"
+
+
+def test_save_class_details_keeps_class_name():
+    data = _data()
+    topics.save_class_details(data, "2026-10-26", "Monday", 1, "9.3", {"topic": "Algebra", "class_name": "x"})
+    record = topics.get_class_details(data, "2026-10-26", "Monday", 1, "9.3")
+    assert record["topic"] == "Algebra"
+    assert record["class_name"] == "9.3"
+
+
+def test_monday_prompt_waits_until_7am_and_shows_once():
+    data = _data()
+    week = "2026-10-26"
+    assert not topics.should_show_monday_prompt(datetime(2026, 10, 26, 6, 59), week, data)
+    assert not topics.should_show_monday_prompt(datetime(2026, 10, 27, 8, 0), week, data)
+
+    data["app_state"] = {"last_monday_prompt_date": "2026-10-26"}
+    assert not topics.should_show_monday_prompt(datetime(2026, 10, 26, 8, 0), week, data)
+
+
+def test_friday_prompt_only_on_friday():
+    assert not topics.should_show_friday_prompt(datetime(2026, 10, 29, 15, 0), {})
