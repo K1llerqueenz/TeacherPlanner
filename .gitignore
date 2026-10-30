@@ -17,3 +17,8 @@ Thumbs.db
 # Local planner data (now stored in the per-user data folder)
 planner_app/data.json
 data.json.bak
+
+# Server database
+*.db
+*.db-wal
+*.db-shm

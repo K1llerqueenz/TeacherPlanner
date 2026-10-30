@@ -8,6 +8,7 @@ from copy import deepcopy
 
 from planner_app.settings import PRESET_THEMES, font_folder_path, get_theme
 from planner_app.storage import save_data, get_current_user, update_current_user_password
+from planner_app.sync import get_sync_state
 from planner_app.timetable import DAYS, TIMETABLE
 from planner_app.Ui.popups_mixin import *
 from planner_app.Ui.base_app import BaseApp
@@ -251,12 +252,17 @@ class SettingsMixin(BaseApp):
                 font=self._font(10, "normal", "popup_text")
             ).grid(row=1, column=0, columnspan=2, sticky="w", pady=2)
 
+            last_synced = get_sync_state(self.data).get("last_synced_at", "")
             tk.Label(
                 account_frame,
-                text=f"Email: {current_user.get('email', '')}",
+                text=(
+                    f"Email: {current_user.get('email', '')}\n"
+                    f"Last synced: {last_synced.replace('T', ' ') if last_synced else 'not yet'}"
+                ),
                 bg=self.theme["panel"],
                 fg=self.theme["text"],
-                font=self._font(10, "normal", "popup_text")
+                font=self._font(10, "normal", "popup_text"),
+                justify="left",
             ).grid(row=2, column=0, columnspan=2, sticky="w", pady=(0, 10))
         else:
             tk.Label(
@@ -371,6 +377,35 @@ class SettingsMixin(BaseApp):
             button_row,
             text="Update planner",
             command=check_for_updates,
+            bg=self.theme["outline"],
+            fg=self.theme["text"],
+            relief="flat",
+            bd=0,
+            cursor="hand2",
+            font=self._font(10, "bold", "popup_text"),
+            padx=12,
+            pady=8
+        ).pack(side="left", padx=(0, 8))
+
+        def sync_planner_now() -> None:
+            messages = {
+                "synced": ("Synced", "Your planner is up to date with your account."),
+                "offline": ("Offline", "Couldn't reach the server. Your changes are saved on this computer and will upload when you're back online."),
+                "waiting": ("Try again", "Close any open editors and try again."),
+            }
+
+            def report() -> None:
+                title, text = messages.get(
+                    self.sync_status, ("Sync", "The planner couldn't sync right now. It will try again shortly.")
+                )
+                messagebox.showinfo(title, text)
+
+            self.sync_now(on_complete=report)
+
+        tk.Button(
+            button_row,
+            text="Sync now",
+            command=sync_planner_now,
             bg=self.theme["outline"],
             fg=self.theme["text"],
             relief="flat",

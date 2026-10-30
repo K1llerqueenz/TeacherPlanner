@@ -18,7 +18,8 @@ from planner_app.reminders import parse_date
 from planner_app.settings import get_theme, load_local_fonts
 from planner_app.Ui.settings_mixin import SettingsMixin
 from planner_app.Ui.sidebar_mixin import SidebarMixin
-from planner_app.storage import load_data, save_data, has_users, get_current_user
+from planner_app.Ui.sync_mixin import SyncMixin
+from planner_app.storage import load_data, save_data, has_users, get_current_user, get_session_token
 from planner_app.timetable import DAYS
 from planner_app.topics import (
     get_class_details,
@@ -30,7 +31,7 @@ from planner_app.topics import (
 )
 
 
-class PrimaryScreen(LoginMixin, SetupMixin, EditorMixin, SidebarMixin, PopupsMixin, SettingsMixin, BaseApp):
+class PrimaryScreen(LoginMixin, SyncMixin, SetupMixin, EditorMixin, SidebarMixin, PopupsMixin, SettingsMixin, BaseApp):
     def __init__(self) -> None:
         super().__init__()
         self.title("Teacher Planner")
@@ -69,6 +70,7 @@ class PrimaryScreen(LoginMixin, SetupMixin, EditorMixin, SidebarMixin, PopupsMix
 
         self._set_initial_geometry()
         self._build_styles()
+        self._init_sync()
 
         self._route_on_startup()
 
@@ -135,12 +137,17 @@ class PrimaryScreen(LoginMixin, SetupMixin, EditorMixin, SidebarMixin, PopupsMix
     def _route_on_startup(self) -> None:
         current_user = get_current_user(self.data)
 
+        if current_user and not get_session_token(self.data):
+            # Signed in on an older version that had no server session.
+            # One online sign-in is needed to start syncing.
+            self.show_login_screen()
+            return
+
         if current_user and self.data.get("auth", {}).get("auto_login", True):
-            setup_info = self.data.get("setup", {})
-            if not setup_info.get("completed", False):
-                self.show_first_run_setup()
-            else:
-                self.start_main_planner()
+            # Open the local planner straight away, even offline. The server
+            # checks the session in the background and signs out if it's gone.
+            self.route_signed_in_user()
+            self.check_session_then_sync()
             return
 
         if not has_users(self.data):
@@ -636,6 +643,13 @@ class PrimaryScreen(LoginMixin, SetupMixin, EditorMixin, SidebarMixin, PopupsMix
     def go_prev_week(self) -> None:
         self.view_date -= timedelta(days=7)
         self.refresh_all()
+
+    def route_signed_in_user(self) -> None:
+        setup_info = self.data.get("setup", {})
+        if not setup_info.get("completed", False):
+            self.show_first_run_setup()
+        else:
+            self.start_main_planner()
 
     def go_next_week(self) -> None:
         self.view_date += timedelta(days=7)

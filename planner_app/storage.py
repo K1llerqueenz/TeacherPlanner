@@ -149,8 +149,10 @@ def load_data() -> Dict[str, Any]:
             data = deepcopy(DEFAULT_DATA)
         _write_json(DATA_FILE, data)
 
-    merged = merge_defaults(data, DEFAULT_DATA)
+    return normalise_data(merge_defaults(data, DEFAULT_DATA))
 
+
+def normalise_data(merged: Dict[str, Any]) -> Dict[str, Any]:
     merged.pop("reminders", None)
 
     settings = merged.get("settings", {})
@@ -196,6 +198,7 @@ def _get_auth(data: Dict[str, Any]) -> Dict[str, Any]:
         "current_user": None,
         "auto_login": True,
         "last_user_id": None,
+        "token": None,
     })
 
 
@@ -209,7 +212,16 @@ def get_last_user_id(data: Dict[str, Any]) -> Optional[str]:
     return auth.get("last_user_id")
 
 
-def set_current_user(data: Dict[str, Any], user: Dict[str, Any], auto_login: bool = True) -> None:
+def get_session_token(data: Dict[str, Any]) -> Optional[str]:
+    return _get_auth(data).get("token") or None
+
+
+def set_current_user(
+    data: Dict[str, Any],
+    user: Dict[str, Any],
+    auto_login: bool = True,
+    token: Optional[str] = None,
+) -> None:
     auth = _get_auth(data)
     auth["current_user"] = {
         "id": user.get("id", ""),
@@ -218,12 +230,15 @@ def set_current_user(data: Dict[str, Any], user: Dict[str, Any], auto_login: boo
     }
     auth["auto_login"] = auto_login
     auth["last_user_id"] = user.get("id", "")
+    if token is not None:
+        auth["token"] = token
 
 
 def logout_current_user(data: Dict[str, Any]) -> None:
     auth = _get_auth(data)
     auth["current_user"] = None
     auth["auto_login"] = False
+    auth["token"] = None
 
 
 def has_users(data: Dict[str, Any]) -> bool:
@@ -255,6 +270,7 @@ def prepare_new_account_local_state(data: Dict[str, Any]) -> None:
     auto_login = _get_auth(data).get("auto_login", True)
 
     reset_planner_data(data, keep_settings=True)
+    data.pop("sync", None)
 
     if current_user:
         set_current_user(data, current_user, auto_login=auto_login)
@@ -280,9 +296,9 @@ def update_current_user_password(
 ) -> tuple[bool, str]:
     from planner_app.auth_api import change_password
 
-    user = get_current_user(data)
-    if not user:
-        return False, "No signed-in user was found."
+    token = get_session_token(data)
+    if not get_current_user(data) or not token:
+        return False, "Please sign out and sign in again before changing your password."
 
-    return change_password(user["id"], current_password, new_password)
+    return change_password(token, current_password, new_password)
 
