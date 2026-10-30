@@ -65,3 +65,10 @@ def test_friday_prompt_after_last_period():
     assert not topics.should_show_friday_prompt(
         datetime(2026, 10, 30, 15, 0), {"last_topic_prompt_date": "2026-10-30"}
     )
+
+
+def test_friday_prompt_follows_teachers_last_bell():
+    from datetime import time
+
+    assert not topics.should_show_friday_prompt(datetime(2026, 10, 30, 15, 0), {}, time(15, 20))
+    assert topics.should_show_friday_prompt(datetime(2026, 10, 30, 15, 20), {}, time(15, 20))

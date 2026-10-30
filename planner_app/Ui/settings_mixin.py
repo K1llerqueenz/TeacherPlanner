@@ -4,17 +4,17 @@ import tkinter as tk
 from datetime import date
 from tkinter import colorchooser, messagebox, ttk
 from typing import Dict
-from copy import deepcopy
 
 from planner_app.settings import PRESET_THEMES, font_folder_path, get_theme
 from planner_app.storage import save_data, get_current_user, update_current_user_password
-from planner_app.timetable import DAYS, TIMETABLE
+from planner_app.terms import get_term_names
+from planner_app.timetable import DAYS, get_period_count, make_blank_timetable
 from planner_app.Ui.popups_mixin import *
 from planner_app.Ui.base_app import BaseApp
 
 
 class SettingsMixin(BaseApp):
-    def open_settings_popup(self) -> None:
+    def open_settings_popup(self, start_page: str = "Planner") -> None:
         overlay = self.open_overlay()
 
         container = tk.Frame(
@@ -88,12 +88,14 @@ class SettingsMixin(BaseApp):
             return inner
 
         planner_tab = make_page("Planner")
+        school_tab = make_page("School")
         pd_tab = make_page("PD Days")
         relief_tab = make_page("Relief")
         general_tab = make_page("General")
         custom_tab = make_page("Customisation")
 
         self._build_planner_settings(planner_tab)
+        self._build_school_settings(school_tab)
         self._build_pd_days_settings(pd_tab)
         self._build_relief_settings(relief_tab)
         self._build_general_settings(general_tab)
@@ -141,12 +143,27 @@ class SettingsMixin(BaseApp):
         ).pack(anchor="w", pady=(0, 16))
 
         add_nav_button("Planner")
+        add_nav_button("School")
         add_nav_button("PD Days")
         add_nav_button("Relief")
         add_nav_button("General")
         add_nav_button("Customisation")
 
-        show_page("Planner")
+        show_page(start_page if start_page in pages else "Planner")
+
+    def _term_picker_options(self) -> tuple[list[str], list[str], list[str]]:
+        """Year, term and week choices for the assessment and topic pickers."""
+        custom_terms = self.settings.get("terms", {})
+        years = sorted(set(custom_terms.keys()) | {str(date.today().year)})
+
+        terms: list[str] = []
+        for year in years:
+            for name in get_term_names(int(year), custom_terms):
+                if name not in terms:
+                    terms.append(name)
+
+        weeks = [f"Week {i}" for i in range(1, 21)]
+        return years, terms, weeks
 
     def _make_section_card(self, parent: tk.Widget, title: str, description: str = "") -> tk.Frame:
         card = tk.Frame(
@@ -642,7 +659,7 @@ class SettingsMixin(BaseApp):
     def _build_timetable_settings(self, parent: tk.Frame) -> None:
         parent.columnconfigure(1, weight=1)
 
-        timetable_data = self.data.setdefault("timetable", deepcopy(TIMETABLE))
+        timetable_data = self.data.setdefault("timetable", make_blank_timetable(get_period_count(self.settings)))
         self.settings.setdefault("class_colours", {})
         self.settings.setdefault("label_colours", {})
 
@@ -841,9 +858,7 @@ class SettingsMixin(BaseApp):
             if lesson.get("type") == "class"
         })
 
-        years = sorted(self.settings.get("terms", {}).keys()) or [str(date.today().year)]
-        terms = ["Term 1", "Term 2", "Term 3", "Term 4"]
-        weeks = [f"Week {i}" for i in range(1, 12)]
+        years, terms, weeks = self._term_picker_options()
 
         def get_class_lessons(class_name: str) -> list[str]:
             periods = []
@@ -859,7 +874,7 @@ class SettingsMixin(BaseApp):
         class_var = tk.StringVar(value=class_names[0] if class_names else "")
         title_var = tk.StringVar()
         year_var = tk.StringVar(value=str(date.today().year) if str(date.today().year) in years else years[0])
-        term_var = tk.StringVar(value="Term 1")
+        term_var = tk.StringVar(value=terms[0] if terms else "Term 1")
         week_var = tk.StringVar(value="Week 1")
 
         initial_lessons = get_class_lessons(class_var.get()) if class_names else ["Lesson 1"]
@@ -952,7 +967,7 @@ class SettingsMixin(BaseApp):
             if class_names:
                 class_var.set(class_names[0])
             year_var.set(str(date.today().year) if str(date.today().year) in years else years[0])
-            term_var.set("Term 1")
+            term_var.set(terms[0] if terms else "Term 1")
             week_var.set("Week 1")
             refresh_lesson_dropdown()
             selected_index["value"] = None
@@ -1105,13 +1120,11 @@ class SettingsMixin(BaseApp):
             if lesson.get("type") == "class"
         })
 
-        years = sorted(self.settings.get("terms", {}).keys()) or [str(date.today().year)]
-        terms = ["Term 1", "Term 2", "Term 3", "Term 4"]
-        weeks = [f"Week {i}" for i in range(1, 12)]
+        years, terms, weeks = self._term_picker_options()
 
         class_var = tk.StringVar(value=class_names[0] if class_names else "")
         year_var = tk.StringVar(value=str(date.today().year) if str(date.today().year) in years else years[0])
-        term_var = tk.StringVar(value="Term 1")
+        term_var = tk.StringVar(value=terms[0] if terms else "Term 1")
         week_var = tk.StringVar(value="Week 1")
 
         tk.Label(top_controls, text="Class", bg=self.theme["panel"], fg=self.theme["text"],
@@ -1376,12 +1389,10 @@ class SettingsMixin(BaseApp):
         pd_type_var = tk.StringVar(value="Full day")
         first_count_var = tk.StringVar(value="1")
 
+        period_count = get_period_count(self.settings)
         selected_period_vars = {
-            1: tk.BooleanVar(value=False),
-            2: tk.BooleanVar(value=False),
-            3: tk.BooleanVar(value=False),
-            4: tk.BooleanVar(value=False),
-            5: tk.BooleanVar(value=False),
+            period: tk.BooleanVar(value=False)
+            for period in range(1, period_count + 1)
         }
 
         tk.Label(controls, text="Day", bg=self.theme["panel"], fg=self.theme["text"],
@@ -1428,7 +1439,7 @@ class SettingsMixin(BaseApp):
         ttk.Combobox(
             first_periods_frame,
             textvariable=first_count_var,
-            values=[str(i) for i in range(1, 6)],
+            values=[str(i) for i in range(1, period_count + 1)],
             state="readonly",
             width=6
         ).pack(side="left")
@@ -1442,7 +1453,7 @@ class SettingsMixin(BaseApp):
             font=self._font(10, "bold", "popup_text")
         ).pack(side="left", padx=(0, 8))
 
-        for period in range(1, 6):
+        for period in range(1, period_count + 1):
             tk.Checkbutton(
                 selected_periods_frame,
                 text=f"P{period}",
@@ -1494,7 +1505,7 @@ class SettingsMixin(BaseApp):
                 if entry_type == "selected_periods":
                     periods = sorted({
                         int(p) for p in entry.get("periods", [])
-                        if str(p).isdigit() and 1 <= int(p) <= 5
+                        if str(p).isdigit() and 1 <= int(p) <= period_count
                     })
                     return {"date": date_text, "type": "selected_periods", "periods": periods}
                 return {"date": date_text, "type": "full"}
