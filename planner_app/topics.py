@@ -3,7 +3,7 @@ from __future__ import annotations
 from datetime import date, datetime, time
 from typing import Dict, Any, List, Optional
 
-from planner_app.timetable import TIMETABLE, DAYS
+from planner_app.timetable import DAYS
 
 
 DATE_FMT = "%Y-%m-%d"
@@ -53,43 +53,35 @@ def save_class_details(
     record["class_name"] = class_name
 
 
-def reset_printed_resources_for_new_week(data: Dict[str, Any], week_key: str) -> None:
-    week_bucket = data.setdefault("weekly_classes", {}).setdefault(week_key, {})
-    for day_name in DAYS:
-        for entry in TIMETABLE[day_name]:
-            if entry["type"] != "class":
-                continue
-            key = f"{day_name}_P{entry['period']}"
-            if key not in week_bucket:
-                week_bucket[key] = {
-                    "class_name": entry["label"],
-                    "topic": "",
-                    "printed_resources": False,
-                    "notes": "",
-                    "homework": "",
-                    "priority": "",
-                    "assignment_name": "",
-                    "assignment_due_date": "",
-                }
-            else:
-                week_bucket[key]["printed_resources"] = False
+def _class_lessons(data: Dict[str, Any]) -> List[tuple[str, Dict[str, Any]]]:
+    timetable = data.get("timetable", {})
+    return [
+        (day_name, entry)
+        for day_name in DAYS
+        for entry in timetable.get(day_name, [])
+        if entry.get("type") == "class" and str(entry.get("label", "")).strip()
+    ]
+
+
+def ensure_week_records(data: Dict[str, Any], week_key: str) -> None:
+    # Each week gets its own records, so "printed resources" starts unticked
+    # for a new week without clearing ticks already made this week.
+    for day_name, entry in _class_lessons(data):
+        _ensure_class_record(data, week_key, day_name, entry["period"], entry["label"])
 
 
 def get_missing_topics_for_week(data: Dict[str, Any], week_key: str) -> List[Dict[str, Any]]:
     missing: List[Dict[str, Any]] = []
-    for day_name in DAYS:
-        for entry in TIMETABLE[day_name]:
-            if entry["type"] != "class":
-                continue
-            details = get_class_details(data, week_key, day_name, entry["period"], entry["label"])
-            if not details.get("topic", "").strip():
-                missing.append(
-                    {
-                        "day": day_name,
-                        "period": entry["period"],
-                        "class_name": entry["label"],
-                    }
-                )
+    for day_name, entry in _class_lessons(data):
+        details = get_class_details(data, week_key, day_name, entry["period"], entry["label"])
+        if not details.get("topic", "").strip():
+            missing.append(
+                {
+                    "day": day_name,
+                    "period": entry["period"],
+                    "class_name": entry["label"],
+                }
+            )
     return missing
 
 
