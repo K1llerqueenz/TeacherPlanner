@@ -1,10 +1,11 @@
 from __future__ import annotations
 
 import json
-import hashlib
-import re
-import secrets
+import os
+import shutil
+import sys
 from copy import deepcopy
+from datetime import datetime
 from pathlib import Path
 from typing import Any, Dict, Optional
 
@@ -12,8 +13,29 @@ from planner_app.timetable import DAYS
 
 
 BASE_DIR = Path(__file__).resolve().parent
-DATA_FILE = BASE_DIR / "data.json"
 FONTS_DIR = BASE_DIR / "fonts"
+
+# Older versions saved data.json next to the code, which is inside the app
+# bundle once packaged (read-only on Windows, wiped on every update).
+LEGACY_DATA_FILE = BASE_DIR / "data.json"
+
+
+def user_data_dir() -> Path:
+    override = os.environ.get("TEACHERPLANNER_DATA_DIR")
+    if override:
+        return Path(override)
+    if sys.platform == "win32":
+        root = os.environ.get("APPDATA") or str(Path.home() / "AppData" / "Roaming")
+        return Path(root) / "TeacherPlanner"
+    if sys.platform == "darwin":
+        return Path.home() / "Library" / "Application Support" / "TeacherPlanner"
+    root = os.environ.get("XDG_DATA_HOME") or str(Path.home() / ".local" / "share")
+    return Path(root) / "teacherplanner"
+
+
+DATA_DIR = user_data_dir()
+DATA_FILE = DATA_DIR / "data.json"
+BACKUP_FILE = DATA_DIR / "data.json.bak"
 
 
 def make_blank_timetable() -> Dict[str, list[dict[str, Any]]]:
@@ -76,23 +98,56 @@ DEFAULT_DATA: Dict[str, Any] = {
 
 
 def ensure_storage() -> None:
-    BASE_DIR.mkdir(parents=True, exist_ok=True)
-    FONTS_DIR.mkdir(parents=True, exist_ok=True)
+    DATA_DIR.mkdir(parents=True, exist_ok=True)
 
-    if not DATA_FILE.exists():
-        with DATA_FILE.open("w", encoding="utf-8") as f:
-            json.dump(deepcopy(DEFAULT_DATA), f, indent=2)
+    if DATA_FILE.exists():
+        return
+
+    if LEGACY_DATA_FILE.exists():
+        shutil.copy2(LEGACY_DATA_FILE, DATA_FILE)
+        return
+
+    _write_json(DATA_FILE, deepcopy(DEFAULT_DATA))
+
+
+def _write_json(path: Path, data: Dict[str, Any]) -> None:
+    # Write to a temp file and swap it in, so a crash mid-save can't leave a
+    # half-written data file behind.
+    tmp_path = path.with_name(path.name + ".tmp")
+    with tmp_path.open("w", encoding="utf-8") as f:
+        json.dump(data, f, indent=2)
+        f.flush()
+        os.fsync(f.fileno())
+    os.replace(tmp_path, path)
+
+
+def _read_json(path: Path) -> Optional[Dict[str, Any]]:
+    try:
+        with path.open("r", encoding="utf-8") as f:
+            data = json.load(f)
+    except (json.JSONDecodeError, OSError, UnicodeDecodeError):
+        return None
+    return data if isinstance(data, dict) else None
+
+
+def _set_aside_corrupt_file() -> None:
+    stamp = datetime.now().strftime("%Y%m%d-%H%M%S")
+    try:
+        os.replace(DATA_FILE, DATA_DIR / f"data.corrupt-{stamp}.json")
+    except OSError:
+        pass
 
 
 def load_data() -> Dict[str, Any]:
     ensure_storage()
-    try:
-        with DATA_FILE.open("r", encoding="utf-8") as f:
-            data = json.load(f)
-    except (json.JSONDecodeError, OSError):
-        data = deepcopy(DEFAULT_DATA)
-        with DATA_FILE.open("w", encoding="utf-8") as f:
-            json.dump(data, f, indent=2)
+
+    data = _read_json(DATA_FILE)
+    if data is None:
+        _set_aside_corrupt_file()
+        data = _read_json(BACKUP_FILE)
+        if data is None:
+            data = deepcopy(DEFAULT_DATA)
+        _write_json(DATA_FILE, data)
 
     merged = merge_defaults(data, DEFAULT_DATA)
 
@@ -115,11 +170,12 @@ def load_data() -> Dict[str, Any]:
 
 
 def save_data(data: Dict[str, Any]) -> None:
-    BASE_DIR.mkdir(parents=True, exist_ok=True)
-    FONTS_DIR.mkdir(parents=True, exist_ok=True)
+    DATA_DIR.mkdir(parents=True, exist_ok=True)
 
-    with DATA_FILE.open("w", encoding="utf-8") as f:
-        json.dump(data, f, indent=2)
+    if DATA_FILE.exists() and _read_json(DATA_FILE) is not None:
+        shutil.copy2(DATA_FILE, BACKUP_FILE)
+
+    _write_json(DATA_FILE, data)
 
 
 def merge_defaults(data: Dict[str, Any], defaults: Dict[str, Any]) -> Dict[str, Any]:

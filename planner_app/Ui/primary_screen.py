@@ -24,7 +24,7 @@ from planner_app.topics import (
     get_class_details,
     get_missing_topics_for_week,
     get_week_key,
-    reset_printed_resources_for_new_week,
+    ensure_week_records,
     should_show_friday_prompt,
     should_show_monday_prompt,
 )
@@ -41,7 +41,7 @@ class PrimaryScreen(LoginMixin, SetupMixin, EditorMixin, SidebarMixin, PopupsMix
             try:
                 base_path = Path(sys._MEIPASS)
             except Exception:
-                base_path = Path(__file__).resolve().parent.parent
+                base_path = Path(__file__).resolve().parents[2]
             return str(base_path / relative_path)
 
         icon_path = resource_path("planner_app/assets/favicon.ico")
@@ -204,7 +204,7 @@ class PrimaryScreen(LoginMixin, SetupMixin, EditorMixin, SidebarMixin, PopupsMix
 
         self._build_ui()
         self.refresh_all()
-        self.after(1000, self.tick)
+        self._schedule_tick(1000)
 
     def _build_ui(self) -> None:
         self.root = tk.Frame(self, bg=self.theme["bg"])
@@ -641,19 +641,34 @@ class PrimaryScreen(LoginMixin, SetupMixin, EditorMixin, SidebarMixin, PopupsMix
         self.view_date += timedelta(days=7)
         self.refresh_all()
 
+    def _schedule_tick(self, delay_ms: int = 30_000) -> None:
+        job = getattr(self, "_tick_job", None)
+        if job is not None:
+            try:
+                self.after_cancel(job)
+            except tk.TclError:
+                pass
+        self._tick_job = self.after(delay_ms, self.tick)
+
     def tick(self) -> None:
+        self._tick_job = None
+        # Stop once the planner has been torn down (e.g. after logging out).
+        if not (hasattr(self, "days_frame") and self.days_frame.winfo_exists()):
+            return
+        self._schedule_tick()
+
         now = datetime.now()
         new_today = now.date()
         if new_today != self.today:
             self.today = new_today
             self.view_date = new_today
             self.data["app_state"]["last_seen_date"] = new_today.isoformat()
-            reset_printed_resources_for_new_week(self.data, get_week_key(new_today))
+            ensure_week_records(self.data, get_week_key(new_today))
             save_data(self.data)
             self.refresh_all()
 
-        week_key = get_week_key(self.view_date)
-        reset_printed_resources_for_new_week(self.data, week_key)
+        if getattr(self, "current_overlay", None) is not None:
+            return
 
         if should_show_friday_prompt(now, self.data["app_state"]):
             next_week_date = now.date() + timedelta(days=7)
