@@ -1,5 +1,8 @@
-# Packages for running the tests. The UI packages aren't needed because the
-# tests only cover the logic modules.
+# Packages for running the tests. fastapi and httpx run the server tests;
+# customtkinter lets the sync tests load the sync code (they skip without it).
 requests
 pytest
 ruff
+fastapi
+httpx
+customtkinter

@@ -2,12 +2,15 @@ from __future__ import annotations
 
 import tkinter as tk
 from tkinter import messagebox
+import re
 import webbrowser
 
 from planner_app.Ui.base_app import BaseApp
 from planner_app.auth_api import login_user, register_user
 from planner_app.storage import (
+    DATA_DIR,
     get_current_user,
+    get_session_token,
     has_users,
     save_data,
     set_current_user,
@@ -15,6 +18,11 @@ from planner_app.storage import (
     prepare_new_account_local_state,
     user_changed_on_this_device,
 )
+from planner_app.sync import has_unsynced_changes, is_blank_planner, write_backup
+
+
+MIN_PASSWORD_LENGTH = 8
+EMAIL_RE = re.compile(r"^[^@\s]+@[^@\s]+\.[^@\s]+$")
 
 
 class LoginMixin(BaseApp):
@@ -108,31 +116,30 @@ class LoginMixin(BaseApp):
                 messagebox.showerror("Missing details", "Please enter your username/email and password.")
                 return
 
-            success, result = login_user(login_value, password)
+            success, result, token = login_user(login_value, password)
             if not success:
                 messagebox.showerror("Login failed", str(result))
                 return
 
             user = result
 
-            switched_user = user_changed_on_this_device(self.data, user)
-            if switched_user:
-                should_reset = messagebox.askyesno(
-                    "Different user detected",
-                    "A different account was previously used on this device.\n\n"
-                    "Do you want to start with a fresh planner for this account?"
-                )
-                if should_reset:
-                    prepare_new_account_local_state(self.data)
+            if user_changed_on_this_device(self.data, user):
+                # The other account's planner lives on the server. Keep a
+                # local copy as well in case it had changes not yet uploaded.
+                if not is_blank_planner(self.data):
+                    backup = write_backup(DATA_DIR, self.data, "previous-account")
+                    if backup is not None and has_unsynced_changes(self.data):
+                        messagebox.showinfo(
+                            "Different account",
+                            "A different account was used on this computer before, and some of its "
+                            "changes hadn't been uploaded yet.\n\n"
+                            f"They have been saved here:\n{backup}",
+                        )
+                prepare_new_account_local_state(self.data)
 
-            set_current_user(self.data, user, auto_login=True)
+            set_current_user(self.data, user, auto_login=True, token=token)
             save_data(self.data)
-
-            setup_info = self.data.get("setup", {})
-            if not setup_info.get("completed", False):
-                self.show_first_run_setup()
-            else:
-                self.start_main_planner()
+            self.after_sign_in()
 
         tk.Button(
             button_row,
@@ -259,6 +266,17 @@ class LoginMixin(BaseApp):
                 messagebox.showerror("Password mismatch", "Your passwords do not match.")
                 return
 
+            if len(password) < MIN_PASSWORD_LENGTH:
+                messagebox.showerror(
+                    "Password too short",
+                    f"Please use at least {MIN_PASSWORD_LENGTH} characters.",
+                )
+                return
+
+            if not EMAIL_RE.match(email):
+                messagebox.showerror("Check your email", "Please enter a valid email address.")
+                return
+
             if not agreed_var.get():
                 messagebox.showerror(
                     "Terms required",
@@ -266,17 +284,19 @@ class LoginMixin(BaseApp):
                 )
                 return
 
-            success, message, user = register_user(username, email, password)
+            success, message, user, token = register_user(username, email, password)
             if not success or user is None:
                 messagebox.showerror("Could not create account", message)
                 return
 
-            set_current_user(self.data, user, auto_login=True)
+            set_current_user(self.data, user, auto_login=True, token=token)
             prepare_new_account_local_state(self.data)
             save_data(self.data)
 
             messagebox.showinfo("Account created", "Your account has been created.")
             self.show_first_run_setup()
+            if token:
+                self._schedule_sync()
 
         if has_users(self.data):
             tk.Button(
@@ -321,6 +341,44 @@ class LoginMixin(BaseApp):
         if not messagebox.askyesno("Log out", "Do you want to log out of Teacher Planner?"):
             return
 
+        if not self.push_now_blocking(timeout=10):
+            if not messagebox.askyesno(
+                "Changes not uploaded",
+                "Some planner changes haven't been uploaded to your account yet.\n\n"
+                "They'll stay on this computer and upload next time you sign in here. "
+                "Log out anyway?",
+            ):
+                return
+
+        self.end_server_session()
         logout_current_user(self.data)
         save_data(self.data)
         self.show_login_screen()
+
+    def after_sign_in(self) -> None:
+        if not get_session_token(self.data):
+            # The server didn't hand out a session (older server version).
+            self.route_signed_in_user()
+            return
+
+        self._show_syncing_screen()
+
+        def done() -> None:
+            self.route_signed_in_user()
+            self._schedule_sync()
+
+        self.sync_now(initial=True, on_complete=done)
+
+    def _show_syncing_screen(self) -> None:
+        self._clear_login_window()
+        self.unbind("<Return>")
+        self.configure(bg=self.theme["bg"], fg_color=self.theme["bg"])
+        outer = tk.Frame(self, bg=self.theme["bg"])
+        outer.pack(fill="both", expand=True)
+        tk.Label(
+            outer,
+            text="Loading your planner…",
+            bg=self.theme["bg"],
+            fg=self.theme["text"],
+            font=self._font(14, "normal", "popup_text"),
+        ).place(relx=0.5, rely=0.5, anchor="center")

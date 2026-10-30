@@ -35,7 +35,7 @@ jobs:
           pip install -r requirements-dev.txt
 
       - name: Check for syntax errors and undefined names
-        run: ruff check --select E9,F63,F7,F82 planner_app tests
+        run: ruff check --select E9,F63,F7,F82 planner_app server tests
 
       - name: Run tests
         run: python -m pytest

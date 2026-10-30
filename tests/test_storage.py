@@ -166,8 +166,17 @@ def test_new_account_starts_clean():
     assert data["auth"]["auto_login"] is False
 
 
+def test_login_keeps_the_session_token_until_logout():
+    data = {}
+    storage.set_current_user(data, {"id": "u1"}, token="tok")
+    assert storage.get_session_token(data) == "tok"
+    storage.logout_current_user(data)
+    assert storage.get_session_token(data) is None
+
+
 def test_change_password_needs_a_signed_in_user():
-    assert storage.update_current_user_password({}, "old", "new") == (False, "No signed-in user was found.")
+    ok, message = storage.update_current_user_password({}, "old", "new")
+    assert not ok and "sign in" in message
 
 
 def test_default_data_is_not_mutated_by_loads(data_dir):
