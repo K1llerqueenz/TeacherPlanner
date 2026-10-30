@@ -53,12 +53,24 @@ WA_KINGS_BIRTHDAY = {
 }
 
 
+DEFAULT_TERM_NAMES = ["Term 1", "Term 2", "Term 3", "Term 4"]
+MAX_TERMS = 6
+
+
 def parse_iso_date(text: str) -> date:
     year, month, day = map(int, text.split("-"))
     return date(year, month, day)
 
 
+def _safe_parse(text) -> date | None:
+    try:
+        return parse_iso_date(str(text))
+    except (TypeError, ValueError):
+        return None
+
+
 def get_terms_for_year(year: int, custom_terms: dict | None = None) -> dict:
+    """The teacher's own dates for this year if they've set any, else the WA defaults."""
     if custom_terms:
         year_terms = custom_terms.get(str(year), {})
         if year_terms:
@@ -66,24 +78,62 @@ def get_terms_for_year(year: int, custom_terms: dict | None = None) -> dict:
     return HARDCODED_TERMS.get(str(year), {})
 
 
-def is_in_term(target_date: date, custom_terms: dict | None = None) -> bool:
-    year_terms = get_terms_for_year(target_date.year, custom_terms)
-
-    for term_name in ["Term 1", "Term 2", "Term 3", "Term 4"]:
-        term_data = year_terms.get(term_name, {})
-        start_text = term_data.get("start", "")
-        end_text = term_data.get("end", "")
-
-        if not start_text or not end_text:
+def get_term_ranges(year_terms: dict) -> list[tuple[str, date, date]]:
+    """(name, start, end) for each term with valid dates, in date order."""
+    ranges = []
+    for name, term_data in (year_terms or {}).items():
+        if not isinstance(term_data, dict):
             continue
+        start = _safe_parse(term_data.get("start", ""))
+        end = _safe_parse(term_data.get("end", ""))
+        if start and end:
+            ranges.append((name, start, end))
+    ranges.sort(key=lambda item: item[1])
+    return ranges
 
-        start_date = parse_iso_date(start_text)
-        end_date = parse_iso_date(end_text)
 
-        if start_date <= target_date <= end_date:
-            return True
+def get_term_names(year: int, custom_terms: dict | None = None) -> list[str]:
+    names = [name for name, _start, _end in get_term_ranges(get_terms_for_year(year, custom_terms))]
+    return names or list(DEFAULT_TERM_NAMES)
 
-    return False
+
+def get_term_week(target_date: date, custom_terms: dict | None = None):
+    """Return (year, term name, "Week N") for a date, or (None, None, None) in the holidays."""
+    year_terms = get_terms_for_year(target_date.year, custom_terms)
+    for name, start, end in get_term_ranges(year_terms):
+        if start <= target_date <= end:
+            week_num = ((target_date - start).days // 7) + 1
+            return str(target_date.year), name, f"Week {week_num}"
+    return None, None, None
+
+
+def is_in_term(target_date: date, custom_terms: dict | None = None) -> bool:
+    return get_term_week(target_date, custom_terms)[0] is not None
+
+
+def validate_terms(year: int, year_terms: dict) -> str | None:
+    """Return an error message for a bad set of term dates, or None if it's fine."""
+    if not year_terms:
+        return "Add at least one term."
+    if len(year_terms) > MAX_TERMS:
+        return f"A year can have at most {MAX_TERMS} terms."
+
+    for name, term_data in year_terms.items():
+        start = _safe_parse(term_data.get("start", ""))
+        end = _safe_parse(term_data.get("end", ""))
+        if start is None or end is None:
+            return f"{name} needs a start and end date."
+        if end < start:
+            return f"{name} must end after it starts."
+        if start.year != int(year) or end.year != int(year):
+            return f"{name} must start and end in {year}."
+
+    ranges = get_term_ranges(year_terms)
+    for (name_a, _start_a, end_a), (name_b, start_b, _end_b) in zip(ranges, ranges[1:]):
+        if start_b <= end_a:
+            return f"{name_a} and {name_b} overlap."
+
+    return None
 
 
 def _nth_weekday_of_month(year: int, month: int, weekday: int, n: int) -> date:
@@ -176,10 +226,13 @@ def get_wa_public_holidays(year: int) -> dict[date, str]:
     return holidays
 
 
-def get_day_block_label(target_date: date, custom_terms: dict | None = None) -> str | None:
+def get_day_block_label(
+    target_date: date,
+    custom_terms: dict | None = None,
+    show_public_holidays: bool = True,
+) -> str | None:
     in_term = is_in_term(target_date, custom_terms)
-    public_holidays = get_wa_public_holidays(target_date.year)
-    is_public_holiday = target_date in public_holidays
+    is_public_holiday = show_public_holidays and target_date in get_wa_public_holidays(target_date.year)
 
     if not in_term and is_public_holiday:
         return "School Holidays\nPublic Holiday"

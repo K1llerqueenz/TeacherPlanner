@@ -85,9 +85,10 @@ def get_missing_topics_for_week(data: Dict[str, Any], week_key: str) -> List[Dic
     return missing
 
 
-def should_show_friday_prompt(now: datetime, app_state: Dict[str, Any]) -> bool:
+def should_show_friday_prompt(now: datetime, app_state: Dict[str, Any], day_end: time = time(14, 50)) -> bool:
+    # day_end is when the teacher's last period finishes (see timetable.get_day_end_time).
     last = app_state.get("last_topic_prompt_date", "")
-    return now.weekday() == 4 and now.time() >= time(14, 50) and last != now.date().isoformat()
+    return now.weekday() == 4 and now.time() >= day_end and last != now.date().isoformat()
 
 
 def should_show_monday_prompt(now: datetime, week_key: str, data: Dict[str, Any]) -> bool:

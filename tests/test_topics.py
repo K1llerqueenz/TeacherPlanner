@@ -67,6 +67,13 @@ def test_friday_prompt_after_last_period():
     )
 
 
+def test_friday_prompt_follows_teachers_last_bell():
+    from datetime import time
+
+    assert not topics.should_show_friday_prompt(datetime(2026, 10, 30, 15, 0), {}, time(15, 20))
+    assert topics.should_show_friday_prompt(datetime(2026, 10, 30, 15, 20), {}, time(15, 20))
+
+
 def test_week_key_is_monday():
     assert topics.get_week_key(datetime(2026, 10, 30).date()) == "2026-10-26"
     assert topics.get_week_key(datetime(2026, 10, 26).date()) == "2026-10-26"

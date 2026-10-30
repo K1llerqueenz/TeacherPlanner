@@ -59,6 +59,25 @@ def test_corrupt_file_without_backup_falls_back_to_defaults(data_dir):
     assert list(data_dir.glob("data.corrupt-*.json"))
 
 
+def test_existing_data_gets_default_bell_times(data_dir):
+    (data_dir / "data.json").write_text(json.dumps({"settings": {"current_theme": "Forest"}}))
+
+    data = storage.load_data()
+
+    assert len(data["settings"]["period_times"]) == 5
+    assert data["settings"]["show_public_holidays"] is True
+    assert all(len(data["timetable"][day]) == 5 for day in data["timetable"])
+
+
+def test_timetable_matches_saved_period_count(data_dir):
+    six = [{"start": f"{8 + i:02d}:00", "end": f"{8 + i:02d}:50"} for i in range(6)]
+    (data_dir / "data.json").write_text(json.dumps({"settings": {"period_times": six}}))
+
+    data = storage.load_data()
+
+    assert all(len(data["timetable"][day]) == 6 for day in data["timetable"])
+
+
 def test_merge_defaults_fills_missing_nested_keys():
     merged = storage.merge_defaults(
         {"settings": {"current_theme": "Forest"}, "extra": 1},
@@ -82,7 +101,8 @@ def test_load_drops_old_keys_and_fills_timetable(data_dir):
     assert "notification_mac" not in data["settings"]
     assert data["settings"]["current_theme"] == "Apricot"
     assert data["timetable"]["Monday"][0]["label"] == "9.3"
-    assert data["timetable"]["Friday"] == []
+    # Days missing from the file get blank periods to match the bell times.
+    assert data["timetable"]["Friday"] == storage.make_blank_timetable()["Friday"]
 
 
 def test_blank_timetable_has_five_periods_a_day():
