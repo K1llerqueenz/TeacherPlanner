@@ -93,7 +93,7 @@ def _get_term_start_date(data: Dict[str, Any], year_value: Any, term_value: Any)
         except (TypeError, ValueError):
             year_terms = None
 
-    # Fallback to hardcoded terms, same idea as main.py
+    # Fall back to the WA defaults, same as terms.get_terms_for_year
     if not isinstance(year_terms, dict) or not year_terms:
         year_terms = HARDCODED_TERMS.get(year_str, {})
 

@@ -4,6 +4,7 @@ from types import SimpleNamespace
 import pytest
 
 pytest.importorskip("tkinter")
+pytest.importorskip("customtkinter")
 pytest.importorskip("fastapi")
 pytest.importorskip("httpx")
 

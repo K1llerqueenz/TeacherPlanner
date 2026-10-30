@@ -3,10 +3,22 @@ name: Tests
 on:
   push:
   pull_request:
+  workflow_dispatch:
 
 jobs:
   test:
-    runs-on: ubuntu-latest
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest]
+        python-version: ['3.11', '3.12', '3.13']
+        include:
+          # The app ships for Windows and macOS, so check those too.
+          - os: windows-latest
+            python-version: '3.11'
+          - os: macos-latest
+            python-version: '3.11'
 
     steps:
       - name: Download repo
@@ -15,15 +27,15 @@ jobs:
       - name: Install Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.11'
+          python-version: ${{ matrix.python-version }}
 
       - name: Install packages
         run: |
           python -m pip install --upgrade pip
-          pip install pytest
+          pip install -r requirements-dev.txt
 
-      - name: Compile check
-        run: python -m compileall -q planner_app
+      - name: Check for syntax errors and undefined names
+        run: ruff check --select E9,F63,F7,F82 planner_app server tests
 
       - name: Run tests
-        run: python -m pytest -q
+        run: python -m pytest

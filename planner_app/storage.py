@@ -9,11 +9,35 @@ from datetime import datetime
 from pathlib import Path
 from typing import Any, Dict, Optional
 
-from planner_app.timetable import DAYS
+from planner_app.timetable import (
+    DEFAULT_PERIOD_TIMES,
+    get_period_count,
+    make_blank_timetable,
+    resize_timetable,
+)
 
 
 BASE_DIR = Path(__file__).resolve().parent
 FONTS_DIR = BASE_DIR / "fonts"
+
+# Earlier builds bundled demo / personal-use-only fonts. They were swapped for
+# freely licensed look-alikes, so map any saved choice onto its replacement.
+LEGACY_FONT_REPLACEMENTS = {
+    "Jraot": "Bungee",
+    "Jraot-Regular": "Bungee",
+    "Jraot Outline": "Bungee Outline",
+    "Jraot-Outline": "Bungee Outline",
+    "Jraot Hollow": "Bungee Shade",
+    "Jraot-Hollow": "Bungee Shade",
+    "Jraot Extrude": "Bungee Shade",
+    "Jraot-Extrude": "Bungee Shade",
+    "Restweek": "Allison",
+    "This Appeal": "Bebas Neue",
+    "This Appeal Free Demo": "Bebas Neue",
+    "ThisAppeal-FreeDemo": "Bebas Neue",
+    "Rocket": "Permanent Marker",
+    "Rocket Brush": "Permanent Marker",
+}
 
 # Older versions saved data.json next to the code, which is inside the app
 # bundle once packaged (read-only on Windows, wiped on every update).
@@ -37,15 +61,6 @@ DATA_DIR = user_data_dir()
 DATA_FILE = DATA_DIR / "data.json"
 BACKUP_FILE = DATA_DIR / "data.json.bak"
 
-
-def make_blank_timetable() -> Dict[str, list[dict[str, Any]]]:
-    return {
-        day: [
-            {"period": period, "label": "", "type": "class", "students": 0}
-            for period in range(1, 6)
-        ]
-        for day in DAYS
-    }
 
 DEFAULT_DATA: Dict[str, Any] = {
     "todos": [],
@@ -79,7 +94,10 @@ DEFAULT_DATA: Dict[str, Any] = {
             "public_holiday_bg": "#D9C2E9",
             "school_holiday_bg": "#BFDCC3",
         },
+        # School-specific setup. Each teacher can change these in Settings > School.
+        "period_times": deepcopy(DEFAULT_PERIOD_TIMES),
         "terms": {},
+        "show_public_holidays": True,
         "pd_day_bg": "#E6CBA8",
         "public_holiday_bg": "#D9C2E9",
         "school_holiday_bg": "#BFDCC3",
@@ -158,17 +176,29 @@ def normalise_data(merged: Dict[str, Any]) -> Dict[str, Any]:
     settings = merged.get("settings", {})
     settings.pop("notification_windows", None)
     settings.pop("notification_mac", None)
+    replace_legacy_fonts(settings)
 
     timetable = merged.get("timetable")
+    period_count = get_period_count(settings)
 
     if not timetable:
-        timetable = make_blank_timetable()
-        merged["timetable"] = timetable
+        merged["timetable"] = make_blank_timetable(period_count)
     else:
-        for day in DAYS:
-            timetable.setdefault(day, [])
+        resize_timetable(timetable, period_count)
 
     return merged
+
+
+def replace_legacy_fonts(settings: Dict[str, Any]) -> None:
+    family = settings.get("font_family")
+    if family in LEGACY_FONT_REPLACEMENTS:
+        settings["font_family"] = LEGACY_FONT_REPLACEMENTS[family]
+
+    sections = settings.get("font_sections")
+    if isinstance(sections, dict):
+        for key, value in sections.items():
+            if value in LEGACY_FONT_REPLACEMENTS:
+                sections[key] = LEGACY_FONT_REPLACEMENTS[value]
 
 
 def save_data(data: Dict[str, Any]) -> None:
@@ -258,7 +288,7 @@ def reset_planner_data(data: Dict[str, Any], keep_settings: bool = True) -> None
     data.update(deepcopy(DEFAULT_DATA))
     data["settings"] = settings
     data["auth"] = auth
-    data["timetable"] = make_blank_timetable()
+    data["timetable"] = make_blank_timetable(get_period_count(settings))
 
 
 def prepare_new_account_local_state(data: Dict[str, Any]) -> None:

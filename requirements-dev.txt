@@ -1,0 +1,8 @@
+# Packages for running the tests. fastapi and httpx run the server tests;
+# customtkinter lets the sync tests load the sync code (they skip without it).
+requests
+pytest
+ruff
+fastapi
+httpx
+customtkinter

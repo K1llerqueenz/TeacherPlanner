@@ -10,17 +10,17 @@ from pathlib import Path
 
 from planner_app.Ui.login_mixin import LoginMixin
 from planner_app.Ui.setup_mixin import SetupMixin
-from planner_app.terms import HARDCODED_TERMS, get_day_block_label
+from planner_app.terms import get_day_block_label, get_term_week
 from planner_app.Ui.editor_mixin import EditorMixin
 from planner_app.Ui.base_app import BaseApp
 from planner_app.Ui.popups_mixin import PopupsMixin
-from planner_app.reminders import parse_date
 from planner_app.settings import get_theme, load_local_fonts
 from planner_app.Ui.settings_mixin import SettingsMixin
+from planner_app.Ui.school_settings_mixin import SchoolSettingsMixin
 from planner_app.Ui.sidebar_mixin import SidebarMixin
 from planner_app.Ui.sync_mixin import SyncMixin
 from planner_app.storage import load_data, save_data, has_users, get_current_user, get_session_token
-from planner_app.timetable import DAYS
+from planner_app.timetable import DAYS, get_day_end_time, get_period_count, get_periods_before_breaks
 from planner_app.topics import (
     get_class_details,
     get_missing_topics_for_week,
@@ -31,7 +31,17 @@ from planner_app.topics import (
 )
 
 
-class PrimaryScreen(LoginMixin, SyncMixin, SetupMixin, EditorMixin, SidebarMixin, PopupsMixin, SettingsMixin, BaseApp):
+class PrimaryScreen(
+    LoginMixin,
+    SyncMixin,
+    SetupMixin,
+    EditorMixin,
+    SidebarMixin,
+    PopupsMixin,
+    SettingsMixin,
+    SchoolSettingsMixin,
+    BaseApp,
+):
     def __init__(self) -> None:
         super().__init__()
         self.title("Teacher Planner")
@@ -105,34 +115,7 @@ class PrimaryScreen(LoginMixin, SyncMixin, SetupMixin, EditorMixin, SidebarMixin
         self.settings["label_colours"][key] = colour
 
     def get_term_week_for_date(self, target_date: date):
-        year = str(target_date.year)
-
-        # First try user/custom term settings
-        terms_source = self.settings.get("terms", {})
-        term_settings = terms_source.get(year, {})
-
-        # Fallback to hardcoded terms if settings are missing
-        if not term_settings:
-            term_settings = HARDCODED_TERMS.get(year, {})
-
-        for term_name in ["Term 1", "Term 2", "Term 3", "Term 4"]:
-            term_data = term_settings.get(term_name, {})
-            start_text = term_data.get("start", "")
-            end_text = term_data.get("end", "")
-
-            if not start_text or not end_text:
-                continue
-
-            start_date = parse_date(start_text)
-            end_date = parse_date(end_text)
-            if start_date is None or end_date is None:
-                continue
-
-            if start_date <= target_date <= end_date:
-                week_num = ((target_date - start_date).days // 7) + 1
-                return year, term_name, f"Week {week_num}"
-
-        return None, None, None
+        return get_term_week(target_date, self.settings.get("terms", {}))
 
     def _route_on_startup(self) -> None:
         current_user = get_current_user(self.data)
@@ -339,7 +322,7 @@ class PrimaryScreen(LoginMixin, SyncMixin, SetupMixin, EditorMixin, SidebarMixin
             if entry_type == "selected_periods":
                 periods = sorted({
                     int(p) for p in entry.get("periods", [])
-                    if str(p).isdigit() and 1 <= int(p) <= 5
+                    if str(p).isdigit() and 1 <= int(p) <= get_period_count(self.settings)
                 })
                 return {"date": date_text, "type": "selected_periods", "periods": periods}
 
@@ -389,7 +372,11 @@ class PrimaryScreen(LoginMixin, SyncMixin, SetupMixin, EditorMixin, SidebarMixin
                 "border": "#a68a64",
             }
 
-        label = get_day_block_label(target_date, self.settings.get("terms", {}))
+        label = get_day_block_label(
+            target_date,
+            self.settings.get("terms", {}),
+            self.settings.get("show_public_holidays", True),
+        )
         if not label:
             return None
 
@@ -439,7 +426,7 @@ class PrimaryScreen(LoginMixin, SyncMixin, SetupMixin, EditorMixin, SidebarMixin
             holder.pack_forget()
             holder.pack(fill="both", expand=True, padx=8, pady=(42, 10))
 
-            for row in range(10):
+            for row in range(max(10, len(self.data["timetable"][day_name]))):
                 holder.grid_rowconfigure(row, weight=0, minsize=0)
             for col in range(3):
                 holder.grid_columnconfigure(col, weight=0, minsize=0)
@@ -507,8 +494,10 @@ class PrimaryScreen(LoginMixin, SyncMixin, SetupMixin, EditorMixin, SidebarMixin
             for row_index in range(len(day_entries)):
                 holder.grid_rowconfigure(row_index, weight=1)
 
+            # Leave a bigger gap after periods followed by recess or lunch.
+            periods_before_breaks = get_periods_before_breaks(self.settings)
             for row_index, entry in enumerate(day_entries):
-                pady = (6, 18) if row_index in (1, 3) else 6
+                pady = (6, 18) if entry.get("period") in periods_before_breaks else 6
                 self._make_class_card(holder, week_key, day_name, entry, row_index, pady, day_date)
 
             holder.update_idletasks()
@@ -684,7 +673,7 @@ class PrimaryScreen(LoginMixin, SyncMixin, SetupMixin, EditorMixin, SidebarMixin
         if getattr(self, "current_overlay", None) is not None:
             return
 
-        if should_show_friday_prompt(now, self.data["app_state"]):
+        if should_show_friday_prompt(now, self.data["app_state"], get_day_end_time(self.settings)):
             next_week_date = now.date() + timedelta(days=7)
             next_week_key = get_week_key(next_week_date)
             self.topic_prompt_queue = get_missing_topics_for_week(self.data, next_week_key)

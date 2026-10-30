@@ -8,10 +8,16 @@ import json
 from pathlib import Path
 
 from planner_app.Ui.base_app import BaseApp
-from planner_app.terms import HARDCODED_TERMS
-from planner_app.reminders import parse_date
-from planner_app.storage import make_blank_timetable, save_data
-from planner_app.timetable import DAYS, PERIOD_TIMES
+from planner_app.storage import save_data
+from planner_app.timetable import (
+    DAYS,
+    get_period_times,
+    normalise_period_times,
+    validate_period_times,
+)
+
+# Steps before the per-day timetable steps. The finish screen comes after the days.
+SETUP_INTRO_STEPS = ["welcome", "school_day", "terms", "classes"]
 
 
 class SetupMixin(BaseApp):
@@ -23,9 +29,11 @@ class SetupMixin(BaseApp):
         self.setup_state = {
             "step": 0,
             "year": current_year if current_year in valid_years else valid_years[0],
+            "period_times": get_period_times(self.settings),
+            "term_rows": None,
             "master_classes": self._build_initial_master_classes(),
-            "timetable": self._build_blank_setup_timetable_ids(),
         }
+        self.setup_state["timetable"] = self._build_blank_setup_timetable_ids()
 
         self._clear_window()
         self._setup_modern_styles()
@@ -83,16 +91,31 @@ class SetupMixin(BaseApp):
         existing = self.setup_state.get("master_classes", [])
         return self._new_master_class_id(len(existing) + 1)
 
+    def _setup_period_count(self) -> int:
+        return len(self.setup_state["period_times"])
+
     def _build_blank_setup_timetable_ids(self) -> dict[str, list[dict[str, Any]]]:
         timetable: dict[str, list[dict[str, Any]]] = {}
         for day in DAYS:
             timetable[day] = []
-            for period in range(1, 6):
+            for period in range(1, self._setup_period_count() + 1):
                 timetable[day].append({
                     "period": period,
                     "class_id": "",
                 })
         return timetable
+
+    def _setup_step_name(self, step: int | None = None) -> str:
+        step = self.setup_state["step"] if step is None else step
+        if step < len(SETUP_INTRO_STEPS):
+            return SETUP_INTRO_STEPS[step]
+        day_index = step - len(SETUP_INTRO_STEPS)
+        if day_index < len(DAYS):
+            return DAYS[day_index]
+        return "finish"
+
+    def _setup_finish_step(self) -> int:
+        return len(SETUP_INTRO_STEPS) + len(DAYS)
 
     def _get_master_classes_clean(self) -> list[dict[str, Any]]:
         cleaned: list[dict[str, Any]] = []
@@ -400,23 +423,24 @@ class SetupMixin(BaseApp):
             print(f"Could not load schools: {e}")
             return []
     def _get_setup_step_title(self) -> tuple[str, str]:
-        step = self.setup_state["step"]
+        name = self._setup_step_name()
 
-        if step == 0:
+        if name == "welcome":
             return "Welcome", "Let’s get your planner ready for first use."
-        if step == 1:
+        if name == "school_day":
+            return "School Day", "How many periods you teach each day, and your bell times."
+        if name == "terms":
+            return "Term Dates", f"Your school's term dates for {self.setup_state['year']}."
+        if name == "classes":
             return "Classes", "Add your classes once, then use them across each day."
-        day_start = 2
-        day_end = day_start + len(DAYS) - 1
-        if day_start <= step <= day_end:
-            day_name = DAYS[step - day_start]
-            return f"{day_name} Timetable", "Choose the class for each period."
+        if name in DAYS:
+            return f"{name} Timetable", "Choose the class for each period."
 
         return "Setup Complete", "Everything is ready to go."
 
     def _get_step_progress_text(self) -> str:
         step = self.setup_state["step"]
-        total = len(DAYS) + 3
+        total = self._setup_finish_step() + 1
         return f"Step {step + 1} of {total}"
 
     # -----------------------------
@@ -491,16 +515,67 @@ class SetupMixin(BaseApp):
         self.setup_title.config(text=title)
         self.setup_subtitle.config(text=subtitle)
 
-        step = self.setup_state["step"]
+        name = self._setup_step_name()
 
-        if step == 0:
+        if name == "welcome":
             self._render_setup_welcome()
-        elif step == 1:
+        elif name == "school_day":
+            self._render_setup_school_day()
+        elif name == "terms":
+            self._render_setup_terms()
+        elif name == "classes":
             self._render_setup_master_classes()
-        elif 2 <= step <= len(DAYS) + 1:
-            self._render_setup_day(DAYS[step - 2])
+        elif name in DAYS:
+            self._render_setup_day(name)
         else:
             self._render_setup_finish()
+
+    def _render_setup_nav(self) -> None:
+        left_nav = tk.Frame(self.setup_nav, bg=self.theme["panel"])
+        left_nav.pack(side="left")
+
+        self._make_pill_button(left_nav, "Back", self._go_setup_back, primary=False).pack(side="left")
+        self._make_pill_button(left_nav, "Skip for now", self.skip_first_run_setup, primary=False).pack(side="left", padx=(10, 0))
+        self._make_pill_button(self.setup_nav, "Next", self._go_setup_next, primary=True).pack(side="right")
+
+    # -----------------------------
+    # School day (bell times) and term dates
+    # -----------------------------
+    def _render_setup_school_day(self) -> None:
+        self.setup_bell_times_getter = self._bell_times_form(self.setup_body, self.setup_state["period_times"])
+        self._render_setup_nav()
+
+    def _render_setup_terms(self) -> None:
+        year = self.setup_state["year"]
+        if self.setup_state.get("term_rows_year") != year:
+            self.setup_state["term_rows"] = self._term_rows_for_year(year)
+            self.setup_state["term_rows_year"] = year
+
+        hint = (
+            "These are the WA public school dates. Change them if your school's are different."
+            if not self.settings.get("terms", {}).get(year) and self.setup_state["term_rows"]
+            else "Check these match your school's term dates."
+        )
+        if not self.setup_state["term_rows"]:
+            hint = "Add your school's terms for this year."
+
+        tk.Label(
+            self.setup_body,
+            text=hint,
+            bg=self.theme["panel"],
+            fg=self.theme["text"],
+            font=self._font(10, "normal", "popup_text"),
+            anchor="w"
+        ).pack(anchor="w", pady=(0, 10))
+
+        self.setup_term_form = self._term_dates_form(self.setup_body)
+        self.setup_term_form["set"](self.setup_state["term_rows"])
+
+        add_wrap = tk.Frame(self.setup_body, bg=self.theme["panel"])
+        add_wrap.pack(fill="x", pady=(10, 0))
+        self._make_pill_button(add_wrap, "Add term", self.setup_term_form["add"], primary=False).pack(side="left")
+
+        self._render_setup_nav()
 
     # -----------------------------
     # Step 0 - Welcome
@@ -712,6 +787,23 @@ class SetupMixin(BaseApp):
     # -----------------------------
     # Day steps
     # -----------------------------
+    def _make_setup_scroll_area(self, parent: tk.Widget) -> tk.Frame:
+        outer = tk.Frame(parent, bg=self.theme["panel"])
+        outer.pack(fill="both", expand=True)
+
+        canvas = tk.Canvas(outer, bg=self.theme["panel"], highlightthickness=0, bd=0)
+        scrollbar = ttk.Scrollbar(outer, orient="vertical", command=canvas.yview)
+        scroll_frame = tk.Frame(canvas, bg=self.theme["panel"])
+
+        scroll_frame.bind("<Configure>", lambda e: canvas.configure(scrollregion=canvas.bbox("all")))
+        canvas_window = canvas.create_window((0, 0), window=scroll_frame, anchor="nw")
+        canvas.bind("<Configure>", lambda e: canvas.itemconfigure(canvas_window, width=e.width))
+        canvas.configure(yscrollcommand=scrollbar.set)
+
+        canvas.pack(side="left", fill="both", expand=True)
+        scrollbar.pack(side="right", fill="y")
+        return scroll_frame
+
     def _render_setup_day(self, day_name: str) -> None:
         body = self.setup_body
         self.day_setup_vars: dict[int, dict[str, Any]] = {}
@@ -747,16 +839,24 @@ class SetupMixin(BaseApp):
 
         class_values = self._get_master_class_display_names()
 
-        for period in range(1, 6):
+        rows_parent = body
+        row_pady = 10
+        if self._setup_period_count() > 6:
+            # Long school days don't fit the card, so let the periods scroll.
+            rows_parent = self._make_setup_scroll_area(body)
+            row_pady = 4
+
+        for period in range(1, self._setup_period_count() + 1):
             lesson = self.setup_state["timetable"][day_name][period - 1]
             saved_class_id = lesson.get("class_id", "")
             saved_class = self._get_master_class_by_id(saved_class_id)
             current_name = saved_class["name"] if saved_class else ""
 
             class_name_var = tk.StringVar(value=current_name)
+            slot = self.setup_state["period_times"][period - 1]
 
-            row = tk.Frame(body, bg=self.theme["panel"])
-            row.pack(fill="x", pady=10)
+            row = tk.Frame(rows_parent, bg=self.theme["panel"])
+            row.pack(fill="x", pady=row_pady)
 
             tk.Label(
                 row,
@@ -770,7 +870,7 @@ class SetupMixin(BaseApp):
 
             tk.Label(
                 row,
-                text=PERIOD_TIMES[period],
+                text=f"{slot['start']} to {slot['end']}",
                 bg=self.theme["panel"],
                 fg=self.theme["text"],
                 font=self._font(10, "normal", "popup_text"),
@@ -853,12 +953,9 @@ class SetupMixin(BaseApp):
         if not self._save_current_setup_step(validate=True):
             return
 
-        self.setup_state["step"] += 1
+        self.setup_state["step"] = min(self.setup_state["step"] + 1, self._setup_finish_step())
 
-        if self.setup_state["step"] > len(DAYS) + 2:
-            self.setup_state["step"] = len(DAYS) + 2
-
-        if self.setup_state["step"] == len(DAYS) + 2:
+        if self.setup_state["step"] == self._setup_finish_step():
             self._save_setup_into_data()
 
         self._render_setup_step()
@@ -867,9 +964,9 @@ class SetupMixin(BaseApp):
     # Save + validate
     # -----------------------------
     def _save_current_setup_step(self, validate: bool = False) -> bool:
-        step = self.setup_state["step"]
+        name = self._setup_step_name()
 
-        if step == 0:
+        if name == "welcome":
             year = self.setup_year_var.get().strip()
             if validate and (not year or not year.isdigit()):
                 messagebox.showerror("Invalid year", "Please enter a valid year.")
@@ -877,7 +974,29 @@ class SetupMixin(BaseApp):
             self.setup_state["year"] = year
             return True
 
-        if step == 1:
+        if name == "school_day":
+            slots = self.setup_bell_times_getter()
+            error = validate_period_times(slots)
+            if error:
+                if validate:
+                    messagebox.showerror("Check your bell times", error)
+                    return False
+                return True
+            self.setup_state["period_times"] = normalise_period_times(slots)
+            self._repair_setup_timetable_ids()
+            return True
+
+        if name == "terms":
+            rows = self.setup_term_form["get"]()
+            self.setup_state["term_rows"] = rows
+            if validate:
+                _year_terms, error = self._term_rows_to_terms(self.setup_state["year"], rows)
+                if error:
+                    messagebox.showerror("Check your term dates", error)
+                    return False
+            return True
+
+        if name == "classes":
             updated_rows: list[dict[str, Any]] = []
 
             for i, row in enumerate(getattr(self, "master_class_row_vars", [])):
@@ -921,11 +1040,11 @@ class SetupMixin(BaseApp):
             self._repair_setup_timetable_ids()
             return True
 
-        if 2 <= step <= len(DAYS) + 1:
-            day_name = DAYS[step - 2]
+        if name in DAYS:
+            day_name = name
             name_to_id = self._get_master_class_name_to_id()
 
-            for period in range(1, 6):
+            for period in range(1, self._setup_period_count() + 1):
                 typed_name = self.day_setup_vars[period]["class_name"].get().strip()
                 class_id = name_to_id.get(typed_name, "")
 
@@ -960,7 +1079,7 @@ class SetupMixin(BaseApp):
             repaired_day: list[dict[str, Any]] = []
             current_day = self.setup_state["timetable"].get(day, [])
 
-            for period in range(1, 6):
+            for period in range(1, self._setup_period_count() + 1):
                 entry = current_day[period - 1] if period - 1 < len(current_day) else {"period": period, "class_id": ""}
                 class_id = entry.get("class_id", "")
 
@@ -1001,7 +1120,7 @@ class SetupMixin(BaseApp):
 
         for day in DAYS:
             repaired_timetable[day] = []
-            for period in range(1, 6):
+            for period in range(1, self._setup_period_count() + 1):
                 entry = self.setup_state["timetable"][day][period - 1]
                 class_id = entry.get("class_id", "")
 
@@ -1023,6 +1142,17 @@ class SetupMixin(BaseApp):
                 })
 
         self.data["timetable"] = repaired_timetable
+        self.data["settings"]["period_times"] = normalise_period_times(self.setup_state["period_times"])
+
+        term_rows = self.setup_state.get("term_rows")
+        if term_rows is not None:
+            year_terms, error = self._term_rows_to_terms(year, term_rows)
+            saved_terms = self.data["settings"].setdefault("terms", {})
+            if error is None and not self._uses_default_terms(year, year_terms):
+                saved_terms[year] = year_terms
+            elif error is None:
+                # Unchanged WA dates: keep following the built-in dates.
+                saved_terms.pop(year, None)
 
         self.data.setdefault("setup", {})
         self.data["setup"]["selected_year"] = year
