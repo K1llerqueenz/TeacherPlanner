@@ -2,6 +2,17 @@ name: Build Windows app
 
 on:
   workflow_dispatch:
+    inputs:
+      release_tag:
+        description: "Release tag to publish the .exe under (leave blank to only build)"
+        required: false
+        default: ""
+  push:
+    tags:
+      - "v*"
+
+permissions:
+  contents: write
 
 jobs:
   build-windows:
@@ -23,7 +34,21 @@ jobs:
           pip install -r planner_app/requirements.txt
           pip install pyinstaller
 
-      - name: Build app with PyInstaller
+      - name: Build single-file .exe
+        shell: pwsh
+        run: |
+          pyinstaller --noconfirm --windowed --onefile `
+            --name "TeacherPlanner" `
+            --icon "planner_app/assets/favicon.ico" `
+            --add-data "planner_app/assets;planner_app/assets" `
+            --add-data "planner_app/fonts;planner_app/fonts" `
+            --add-data "planner_app/schools.json;planner_app" `
+            --collect-data customtkinter `
+            --collect-data CTkMessagebox `
+            --hidden-import babel.numbers `
+            planner_app/main.py
+
+      - name: Build folder version and zip it
         shell: pwsh
         run: |
           pyinstaller --noconfirm --windowed `
@@ -32,15 +57,33 @@ jobs:
             --add-data "planner_app/assets;planner_app/assets" `
             --add-data "planner_app/fonts;planner_app/fonts" `
             --add-data "planner_app/schools.json;planner_app" `
+            --collect-data customtkinter `
+            --collect-data CTkMessagebox `
+            --hidden-import babel.numbers `
             planner_app/main.py
-
-      - name: Zip the app
-        shell: pwsh
-        run: |
           Compress-Archive -Path "dist/Teacher Planner" -DestinationPath "dist/TeacherPlanner-windows.zip" -Force
 
       - name: Upload build
         uses: actions/upload-artifact@v4
         with:
           name: TeacherPlanner-windows
-          path: dist/TeacherPlanner-windows.zip
+          path: |
+            dist/TeacherPlanner.exe
+            dist/TeacherPlanner-windows.zip
+
+      - name: Publish GitHub release
+        if: startsWith(github.ref, 'refs/tags/') || github.event.inputs.release_tag != ''
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ github.event.inputs.release_tag || github.ref_name }}
+          target_commitish: ${{ github.sha }}
+          name: Teacher Planner ${{ github.event.inputs.release_tag || github.ref_name }}
+          body: |
+            Windows build of Teacher Planner, built from commit ${{ github.sha }}.
+
+            Download **TeacherPlanner.exe** and double-click it to run. Windows SmartScreen may warn that the app is unrecognised because it isn't code-signed; click "More info" then "Run anyway".
+
+            **TeacherPlanner-windows.zip** is the same app as a folder, which starts faster. Unzip it and run `Teacher Planner.exe` inside.
+          files: |
+            dist/TeacherPlanner.exe
+            dist/TeacherPlanner-windows.zip
